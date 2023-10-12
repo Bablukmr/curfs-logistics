@@ -1,0 +1,52 @@
+import  { useState } from 'react'
+
+function LonInRequest({setRequestPassword}) {
+const [message,setMessage]=useState(true)
+
+  return (
+    <div>
+{message ? 
+<div className="flex w-full flex-col items-center justify-center">
+    <h1 className="my-14 text-lg font-semibold">
+    Request new password
+    </h1>
+    <form className="w-full flex flex-col items-center justify-center gap-10">
+      <div className="w-full">
+        <label className="">E-mail</label>
+        <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
+          <input
+            placeholder="E-mail"
+            className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
+          />
+        </div>
+      </div>
+      <button onClick={()=>setMessage(false)} className="w-full py-3 rounded-md bg-[#2B3087] text-white">
+      Request
+      </button>
+    </form>
+  </div>
+  :
+
+<div className="flex w-full flex-col items-center justify-center">
+    <h1 className="my-14 text-lg font-semibold">
+      Login personnel application
+    </h1>
+    <div className="w-full flex flex-col items-center justify-center gap-10">
+    <div className="mt-4">
+      <p className="text-sm text-center">
+      The password reset request has been successfully received. You will receive an email with a link to reset your password.
+      </p>
+    </div>
+      <button onClick={()=>setRequestPassword(true)} className="w-full py-3 rounded-md bg-[#2B3087] text-white">
+      Back to login
+      </button>
+    </div>
+    
+  </div>
+    
+}
+    </div>
+  )
+}
+
+export default LonInRequest

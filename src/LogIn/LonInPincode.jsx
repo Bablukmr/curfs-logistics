@@ -1,12 +1,11 @@
-import React from 'react'
 
 function LonInPincode() {
   return (
-    <div className="w-[80%] flex flex-col items-center justify-center">
+    <div className="flex w-full flex-col items-center justify-center">
     <h1 className="my-14 text-lg font-semibold">
       Login personnel application
     </h1>
-    <form className="w-full md:w-[25%] flex flex-col items-center justify-center gap-10">
+    <form className="w-full flex flex-col items-center justify-center gap-10">
       <div className="w-full">
         <label className="">Pincode</label>
         <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
