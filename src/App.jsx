@@ -4,9 +4,9 @@ import LogIn from './LogIn/LogIn'
 function App() {
 
   return (
-    <div>
+    <>
       <LogIn/>
-    </div>
+    </>
   )
 }
 
