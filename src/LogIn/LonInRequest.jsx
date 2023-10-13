@@ -1,4 +1,5 @@
 import  { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function LonInRequest({setRequestPassword}) {
 const [message,setMessage]=useState(true)
@@ -37,11 +38,13 @@ const [message,setMessage]=useState(true)
       The password reset request has been successfully received. You will receive an email with a link to reset your password.
       </p>
     </div>
-      <button onClick={()=>setRequestPassword(true)} className="w-full py-3 rounded-md bg-[#2B3087] text-white">
+   
+      <Link to="/" onClick={()=>setRequestPassword(true)} className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white">
       Back to login
-      </button>
+      </Link> 
+      
     </div>
-    
+  
   </div>
     
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 function LogInEmail({setRequestPassword}) {
@@ -26,16 +27,16 @@ function LogInEmail({setRequestPassword}) {
             />
           </div>
         </div>
-        <button className="w-full py-3 rounded-md bg-[#2B3087] text-white">
+        <Link to='/home' className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white">
           Login
-        </button>
+        </Link>
       </form>
       <div className="mt-4">
         <p className="text-sm">
           Forgot your password?{" "}
-          <span className="text-blue-900" onClick={() => setRequestPassword(false)}>
+          <Link to={"/request"} className="text-blue-900" onClick={() => setRequestPassword(false)}>
             Request new password
-          </span>
+          </Link>
         </p>
       </div>
     </div>
