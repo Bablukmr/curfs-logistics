@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 function LonInPincode() {
   return (
@@ -15,9 +16,9 @@ function LonInPincode() {
           />
         </div>
       </div>
-      <button className="w-full py-3 rounded-md bg-[#2B3087] text-white">
+      <Link to='/home' className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white">
         Login
-      </button>
+      </Link>
     </form>
     <div className="mt-4">
       <p className="text-sm text-center">
