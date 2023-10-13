@@ -16,7 +16,9 @@ function LonInPincode() {
           />
         </div>
       </div>
-      <Link to='/home' className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white">
+      <Link to='/' 
+      // onClick={()=>localStorage.setItem("token",true)} 
+      className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white">
         Login
       </Link>
     </form>

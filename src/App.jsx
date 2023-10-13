@@ -1,18 +1,16 @@
 import "./App.css";
-import Home from "./Home/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NotFound from "./notFound";
+import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import AuthLayout from "./Auth/authLayout";
+import Protected from "./protected";
+import AppLayout from "./App/appLayout";
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/*" element={<AuthLayout />}>
-          <Route path="*" element={<NotFound />} />
-        </Route>
-
-        <Route path="/home" element={<Home />} />
+        <Route path="auth/*" element={<AuthLayout />}/>
+        <Route path="/*" element={<Protected Componet={AppLayout} />} />
       </Routes>
     </BrowserRouter>
   );

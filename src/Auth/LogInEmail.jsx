@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-function LogInEmail({setRequestPassword}) {
+function LogInEmail() {
 
   return (
     <div className="flex w-full flex-col items-center justify-center">
@@ -27,14 +27,18 @@ function LogInEmail({setRequestPassword}) {
             />
           </div>
         </div>
-        <Link to='/home' className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white">
+        <Link to='/' 
+        onClick={()=>localStorage.setItem("token", "1234")}
+         className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white">
           Login
         </Link>
       </form>
-      <div className="mt-4">
+      <div className="mt-4 text-sm text-center">
         <p className="text-sm">
           Forgot your password?{" "}
-          <Link to={"/request"} className="text-blue-900" onClick={() => setRequestPassword(false)}>
+          <Link to={"/auth/password-reset"} className="text-blue-900"
+          //  onClick={() => setRequestPassword(false)}
+           >
             Request new password
           </Link>
         </p>

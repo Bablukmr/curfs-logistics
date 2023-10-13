@@ -11,7 +11,6 @@ export default function AuthRoutes() {
       <Route path="pincode" element={<LonInPincode />} />
       <Route path="password-reset" element={<LonInRequest />} />
       <Route path="*" element={<NotFound />} />
-
     </Routes>
   );
 }
