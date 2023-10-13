@@ -1,20 +1,21 @@
 import "./App.css";
 import Home from "./Home/Home";
-import LogIn from "./LogIn/LogIn";
-import { BrowserRouter,Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./notFound";
+import AuthLayout from "./Auth/authLayout";
 
 function App() {
-  return(
+  return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<LogIn />} />
-      <Route path="/:name" element={<LogIn />} />
-      <Route path="/home" element={<Home />} />
+      <Routes>
+        <Route path="/*" element={<AuthLayout />}>
+          <Route path="*" element={<NotFound />} />
+        </Route>
 
-    </Routes>
-  </BrowserRouter>
-     
-     );
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
