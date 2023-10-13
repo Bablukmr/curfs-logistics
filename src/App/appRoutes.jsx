@@ -2,14 +2,14 @@ import { Route, Routes } from "react-router-dom";
 import HeroSection from './HeroSection'
 import NotFound from '../notFound';
 
-function HomeRoutes() {
+function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HeroSection />}/>
       
-      {/* <Route path="*" element={<NotFound />} /> */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }
 
-export default HomeRoutes
+export default AppRoutes

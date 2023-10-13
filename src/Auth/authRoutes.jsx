@@ -7,7 +7,7 @@ import NotFound from "../notFound";
 export default function AuthRoutes() {
   return (
     <Routes>
-      <Route path="/auth" element={<LogInEmail />} />
+      <Route path="/" element={<LogInEmail />} />
       <Route path="pincode" element={<LonInPincode />} />
       <Route path="password-reset" element={<LonInRequest />} />
       <Route path="*" element={<NotFound />} />

@@ -5,6 +5,7 @@ function Protected({Componet}) {
 const navigate=useNavigate()
     useEffect(()=>{
         let token=localStorage.getItem("token")
+        console.log(token);
         if(!token){
             navigate("/auth")
         }

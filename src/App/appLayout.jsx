@@ -1,8 +1,7 @@
 import Header from "./Header";
-import HomeRoutes from "./homeRoutes";
+import AppRoutes from "./appRoutes";
 
-function Home() {
-
+function AppLayout() {
 // if not token redirect to auth  componentsdidmounts
 
   return (
@@ -12,11 +11,11 @@ function Home() {
         <Header/>
       </div>
       <div  className="flex flex-col items-center ">
-        <HomeRoutes />
+        <AppRoutes />
       </div>
       </div>
     </div>
   );
 }
 
-export default Home;
+export default AppLayout;

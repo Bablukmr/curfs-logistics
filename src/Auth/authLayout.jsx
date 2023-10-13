@@ -30,7 +30,7 @@ export default function AuthLayout() {
           <p>E-mail</p>
         </Link>
         <Link
-          to="/pincode"
+          to="/auth/pincode"
           onClick={() => setTab(false)}
           className={`w-[50%] h-[60px] flex items-center justify-center transition-all duration-500 
         ${tab ? " " : "border-[#2B3087] border-t-[4px] bg-[#EDECEC]"}`}
