@@ -1,7 +1,7 @@
 import  { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function LonInRequest({setRequestPassword}) {
+function LonInRequest() {
 const [message,setMessage]=useState(true)
 
   return (
@@ -27,7 +27,6 @@ const [message,setMessage]=useState(true)
     </form>
   </div>
   :
-
 <div className="flex w-full flex-col items-center justify-center">
     <h1 className="my-14 text-lg font-semibold">
       Login personnel application
@@ -39,7 +38,9 @@ const [message,setMessage]=useState(true)
       </p>
     </div>
    
-      <Link to="/" onClick={()=>setRequestPassword(true)} className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white">
+      <Link to="/auth"
+      //  onClick={()=>setRequestPassword(true)} 
+       className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white">
       Back to login
       </Link> 
       

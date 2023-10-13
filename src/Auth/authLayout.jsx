@@ -4,7 +4,7 @@ import AuthRoutes from "./authRoutes";
 
 export default function AuthLayout() {
   const [tab, setTab] = useState(true);
-  const [requestPassword, setRequestPassword] = useState(true);
+  // const [requestPassword, setRequestPassword] = useState(true);
 
   return (
     <div className="w-full  h-full flex flex-col items-center justify-center">
@@ -12,27 +12,16 @@ export default function AuthLayout() {
         <img src="/Group18.png" width={250} alt="LOGO" />
       </div>
 
-      <div className="flex-1 content  bg-white overflow-auto p-4">
+      <div className="flex-1 w-[85%] md:w-[30%] lg:w-[25%]  bg-white overflow-auto p-4">
         <AuthRoutes />
       </div>
 
-      {/* <div className="w-[80%] md:w-[30%] lg:w-[25%]">
-        {tab ? (
-          requestPassword ? (
-            <LogInEmail setRequestPassword={setRequestPassword} />
-          ) : (
-            <LonInRequest setRequestPassword={setRequestPassword} />
-          )
-        ) : (
-          <LonInPincode />
-        )}
-      </div> */}
-
-      <div className="w-full absolute bottom-0 border-t-2  flex">
+      <div className="w-full absolute bottom-0 border-t-2 flex">
         <Link
-          to="/"
+          to="/auth"
           onClick={() => {
-            setTab(true), setRequestPassword(true);
+            setTab(true)
+            // , setRequestPassword(true);
           }}
           className={`w-[50%] h-[60px] flex items-center justify-center transition-all duration-500 
         ${tab ? "border-[#2B3087] border-t-[4px] bg-[#EDECEC]" : " "}
@@ -52,3 +41,4 @@ export default function AuthLayout() {
     </div>
   );
 }
+

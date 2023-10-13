@@ -1,7 +1,9 @@
 import Header from "./Header";
-import HeroSection from "./HeroSection";
+import HomeRoutes from "./homeRoutes";
 
 function Home() {
+
+// if not token redirect to auth  componentsdidmounts
 
   return (
     <div >
@@ -10,9 +12,9 @@ function Home() {
         <Header/>
       </div>
       <div  className="flex flex-col items-center ">
-        <HeroSection />
+        <HomeRoutes />
       </div>
-      </div>     
+      </div>
     </div>
   );
 }
