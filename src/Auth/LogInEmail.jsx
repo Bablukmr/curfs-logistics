@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 function LogInEmail() {
+  const navigation=useNavigate()
+  const handleLogin = (e) => {
+    e.preventDefault()
+    setTimeout(() => {
+      console.log("abc");
+      localStorage.setItem("token", "1234");
+      navigation("/")
+    }, 3000);
+  };
 
   return (
     <div className="flex w-full flex-col items-center justify-center">
@@ -27,18 +36,21 @@ function LogInEmail() {
             />
           </div>
         </div>
-        <Link to='/' 
-        onClick={()=>localStorage.setItem("token", "1234")}
-         className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white">
+        <button
+          onClick={handleLogin}
+          className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white"
+        >
           Login
-        </Link>
+        </button>
       </form>
       <div className="mt-4 text-sm text-center">
         <p className="text-sm">
           Forgot your password?{" "}
-          <Link to={"/auth/password-reset"} className="text-blue-900"
-          //  onClick={() => setRequestPassword(false)}
-           >
+          <Link
+            to={"/auth/password-reset"}
+            className="text-blue-900"
+            //  onClick={() => setRequestPassword(false)}
+          >
             Request new password
           </Link>
         </p>

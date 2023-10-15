@@ -12,7 +12,7 @@ export default function AuthLayout() {
         <img src="/Group18.png" width={250} alt="LOGO" />
       </div>
 
-      <div className="flex-1 w-[85%] md:w-[30%] lg:w-[25%]  bg-white overflow-auto p-4">
+      <div className="flex-1 w-[85%] md:w-[35%]  bg-white overflow-auto p-4">
         <AuthRoutes />
       </div>
 
