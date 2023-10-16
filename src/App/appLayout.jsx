@@ -21,7 +21,7 @@ function AppLayout() {
       </div>
       <div></div>
       {drawer ? (
-        <div className="w-[100%] h-full absolute z-50 left-0 top-0 flex ">
+        <div className="w-[100%] fixed h-[100vh]  z-50 left-0 top-0 flex ">
           <div className="bg-white h-full w-[75%] md:w-[20%] relative flex flex-col ">
             <div className="flex items-center justify-center mt-16">
               <div className="absolute right-0 top-0 m-4 text-xl">
