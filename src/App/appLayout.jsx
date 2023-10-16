@@ -9,6 +9,7 @@ function AppLayout() {
   // if not token redirect to auth  componentsdidmounts
 
   const [drawer, setDrawer] = useState(false);
+  
   return (
     <div>
       <div>
@@ -22,9 +23,9 @@ function AppLayout() {
       <div></div>
       {drawer ? (
         <div className="w-[100%] fixed h-[100vh]  z-50 left-0 top-0 flex ">
-          <div className="bg-white h-full w-[75%] md:w-[20%] relative flex flex-col ">
+          <div className="bg-white h-full w-[75%] md:w-[30%] relative flex flex-col ">
             <div className="flex items-center justify-center mt-16">
-              <div className="absolute right-0 top-0 m-4 text-xl">
+              <div className="absolute right-0 top-0 m-4 text-lg">
                 {" "}
                 <HiX
                   onClick={() => {
@@ -66,7 +67,7 @@ function AppLayout() {
             onClick={() => {
               setDrawer(false);
             }}
-            className="bg-black opacity-50 w-[25%] md:w-[80%] h-full"
+            className="bg-black opacity-50 w-[25%] md:w-[70%] h-full"
           ></div>
           <div className="absolute bottom-0 left-0 m-4"><p className="text-sm">Version 1.0</p></div>
         </div>

@@ -14,10 +14,10 @@ function LogInEmail() {
 
   return (
     <div className="flex w-full flex-col items-center justify-center">
-      <h1 className="my-14 text-lg font-semibold">
+      <h1 className="my-10 text-lg font-semibold">
         Login personnel application
       </h1>
-      <form className="w-full flex flex-col items-center justify-center gap-10">
+      <form className="w-full flex flex-col items-center justify-center gap-6">
         <div className="w-full">
           <label className="">E-mail</label>
           <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
@@ -38,7 +38,7 @@ function LogInEmail() {
         </div>
         <button
           onClick={handleLogin}
-          className="w-full text-center py-3 rounded-md bg-[#2B3087] text-white"
+          className="w-full text-center mt-3 py-3 rounded-md bg-[#2B3087] text-white"
         >
           Login
         </button>

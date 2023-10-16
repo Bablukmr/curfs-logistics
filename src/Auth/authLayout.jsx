@@ -16,7 +16,7 @@ export default function AuthLayout() {
         <AuthRoutes />
       </div>
 
-      <div className="w-full absolute bottom-0 border-t-2 flex">
+      <div className="w-full fixed bottom-0 border-t-2 flex">
         <Link
           to="/auth"
           onClick={() => {
@@ -24,7 +24,7 @@ export default function AuthLayout() {
             // , setRequestPassword(true);
           }}
           className={`w-[50%] h-[60px] flex items-center justify-center transition-all duration-500 
-        ${tab ? "border-[#2B3087] border-t-[4px] bg-[#EDECEC]" : " "}
+        ${tab ? "border-[#2B3087] border-t-[4px] bg-[#EDECEC]" : "bg-white "}
         `}
         >
           <p>E-mail</p>
@@ -33,7 +33,7 @@ export default function AuthLayout() {
           to="/auth/pincode"
           onClick={() => setTab(false)}
           className={`w-[50%] h-[60px] flex items-center justify-center transition-all duration-500 
-        ${tab ? " " : "border-[#2B3087] border-t-[4px] bg-[#EDECEC]"}`}
+        ${tab ? "bg-white" : "border-[#2B3087] border-t-[4px] bg-[#EDECEC]"}`}
         >
           <p>Pincode</p>
         </Link>

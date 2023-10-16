@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function LonInPincode() {
   return (
     <div className="flex w-full flex-col items-center justify-center">
-    <h1 className="my-14 text-lg font-semibold">
+    <h1 className="my-10 text-lg font-semibold">
       Login personnel application
     </h1>
     <form className="w-full flex flex-col items-center justify-center gap-10">

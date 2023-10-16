@@ -9,6 +9,8 @@ import Documents from "./Documents/documents";
 import RequestLeave from "./Request_Leave/requestLeave";
 import Manualoffice from "./Manual_Training/Manual_office/manualOffice";
 import ExamplChapter from "./Manual_Training/Manual_office/exampleChapter";
+import ProofLicense from "./Documents/Proof_License/proofLicense";
+import GeneralDocuments from "./Documents/General_Documents/generalDocuments";
 
 function AppRoutes() {
   return (
@@ -20,6 +22,8 @@ function AppRoutes() {
       <Route path="/news" element={<News/>}/>
       <Route path="/report-damage" element={<ReportDamage/>}/>
       <Route path="/documets" element={<Documents/>}/>
+      <Route path="/documets/proof-license" element={<ProofLicense/>}/>
+      <Route path="/documets/general-documents" element={<GeneralDocuments/>}/>
       <Route path="/request-leave" element={<RequestLeave/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
