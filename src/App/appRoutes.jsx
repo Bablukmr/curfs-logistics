@@ -11,6 +11,7 @@ import Manualoffice from "./Manual_Training/Manual_office/manualOffice";
 import ExamplChapter from "./Manual_Training/Manual_office/exampleChapter";
 import ProofLicense from "./Documents/Proof_License/proofLicense";
 import GeneralDocuments from "./Documents/General_Documents/generalDocuments";
+import Logistics from "./Report_Damage/Logistics/logistics";
 
 function AppRoutes() {
   return (
@@ -21,6 +22,7 @@ function AppRoutes() {
       <Route path="manual-training/manual-office/example-chapter" element={<ExamplChapter/>}/>
       <Route path="/news" element={<News/>}/>
       <Route path="/report-damage" element={<ReportDamage/>}/>
+      <Route path="/report-damage/logistics" element={<Logistics/>}/>
       <Route path="/documets" element={<Documents/>}/>
       <Route path="/documets/proof-license" element={<ProofLicense/>}/>
       <Route path="/documets/general-documents" element={<GeneralDocuments/>}/>
