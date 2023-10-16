@@ -1,4 +1,5 @@
-import Header from "./header";
+// import Header from "./header";
+import Header from "./Header";
 import AppRoutes from "./appRoutes";
 import { useState } from "react";
 import { HiX } from "react-icons/hi";

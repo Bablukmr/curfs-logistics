@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import HeroSection from './heroSection'
+// import HeroSection from './heroSection'
+import HeroSection from "./HeroSection";
 import NotFound from '../notFound';
 import ManualTraining from "./Manual_Training/manualTraining";
 import News from "./News/news";
@@ -16,7 +17,6 @@ function AppRoutes() {
       <Route path="/report-damage" element={<ReportDamage/>}/>
       <Route path="/documets" element={<Documents/>}/>
       <Route path="/request-leave" element={<RequestLeave/>}/>
-      
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
