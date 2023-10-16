@@ -73,8 +73,8 @@ function Carousel() {
             <p
               onClick={() => handleClick(index)}
               key={index}
-              className={`h-2 w-2 bg-slate-400 rounded-full ${
-                index === currentIndex ? "bg-blue-900" : ""
+              className={`h-2 w-2 rounded-full ${
+                index === currentIndex ? "bg-[#4e2268]" :"bg-slate-400"
               }`}
             ></p>
           ))}
