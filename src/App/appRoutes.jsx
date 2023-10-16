@@ -7,12 +7,16 @@ import News from "./News/news";
 import ReportDamage from "./Report_Damage/reportDamage";
 import Documents from "./Documents/documents";
 import RequestLeave from "./Request_Leave/requestLeave";
+import Manualoffice from "./Manual_Training/Manual_office/manualOffice";
+import ExamplChapter from "./Manual_Training/Manual_office/exampleChapter";
 
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HeroSection />}/>
       <Route path="/manual-training" element={<ManualTraining/>}/>
+      <Route path="manual-training/manual-office" element={<Manualoffice/>}/>
+      <Route path="manual-training/manual-office/example-chapter" element={<ExamplChapter/>}/>
       <Route path="/news" element={<News/>}/>
       <Route path="/report-damage" element={<ReportDamage/>}/>
       <Route path="/documets" element={<Documents/>}/>
