@@ -26,7 +26,7 @@ function ExamplChapter() {
             animi a ullam ab ea nobis deleniti ex nulla reprehenderit.
           </p>
         </div>
-        <div className="fixed bottom-0 w-[86%] flex items-center justify-between h-[70px] border-t-2">
+        <div className="fixed bottom-0 w-[86%] md:w-[30%] flex items-center justify-between h-[70px] border-t-2">
           <Link className="w-[120px] h-[45px] flex items-center justify-center rounded-md bg-[#2B3087] text-white">
             overview
           </Link>

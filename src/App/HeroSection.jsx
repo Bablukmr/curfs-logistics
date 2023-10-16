@@ -10,7 +10,7 @@ function HeroSection() {
           className="flex bg-[#2B3087] text-white rounded-md mt-5 px-4 h-[69px] w-[95%] items-center justify-center gap-4"
         >
           <div className="w-[20%] flex items-center justify-center">
-            <img src="/public/book.png" width={20} alt="/" />
+            <img src="/book.png" width={20} alt="/" />
           </div>
           <div className="w-[80%] ">
             <div className="flex flex-col">
@@ -24,7 +24,7 @@ function HeroSection() {
           className="flex bg-[#2B3087] text-white rounded-md mt-2 px-4 h-[69px] w-[95%] items-center justify-center gap-4"
         >
           <div className="w-[20%] flex items-center justify-center">
-            <img src="/public/news.png" width={20} alt="/" />
+            <img src="/news.png" width={20} alt="/" />
           </div>
           <div className="w-[80%] ">
             <div className="flex flex-col">
@@ -38,7 +38,7 @@ function HeroSection() {
           className="flex bg-[#2B3087] text-white rounded-md mt-2 px-4 h-[69px] w-[95%] items-center justify-center gap-4"
         >
           <div className="w-[20%] flex items-center justify-center">
-            <img src="/public/report.png" width={20} alt="/" />
+            <img src="/report.png" width={20} alt="/" />
           </div>
           <div className="w-[80%] ">
             <div className="flex flex-col">
@@ -52,7 +52,7 @@ function HeroSection() {
           className="flex bg-[#2B3087] text-white rounded-md mt-2 px-4 h-[69px] w-[95%] items-center justify-center gap-4"
         >
           <div className="w-[20%] flex items-center justify-center">
-            <img src="/public/request.png" width={20} alt="/" />
+            <img src="/request.png" width={20} alt="/" />
           </div>
           <div className="w-[80%] ">
             <div className="flex flex-col">
@@ -66,7 +66,7 @@ function HeroSection() {
           className="flex bg-[#2B3087] text-white rounded-md mt-2 px-4 h-[69px] w-[95%] items-center justify-center gap-4"
         >
           <div className="w-[20%] flex items-center justify-center">
-            <img src="/public/documet.png" width={20} alt="/" />
+            <img src="/documet.png" width={20} alt="/" />
           </div>
           <div className="w-[80%] ">
             <div className="flex flex-col">

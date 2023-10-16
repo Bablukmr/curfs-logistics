@@ -7,7 +7,7 @@ function News() {
     <div className='w-[86%] ml-[7%] md:w-[30%] md:ml-[35%] flex flex-col border-b-2'>
         <h2 className='text-lg my-5 font-bold'>News</h2>
         <div className='w-full h-[185px] relative'>
-            <img src="/public/news1.png" alt='img' className='w-full h-[185px]'/>
+            <img src="/news1.png" alt='img' className='w-full h-[185px]'/>
             <div className='absolute w-full bottom-0 h-[50px] bg-black opacity-60 flex items-center'>
         <h3 className='text-lg ml-6 font-semibold text-white'>title of news</h3>
             </div>

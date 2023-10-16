@@ -6,9 +6,9 @@ function Manualoffice() {
     <div className='mt-[55px] mb-8 w-full'>
         <div className='w-[86%] ml-[7%] md:ml-[35%] md:w-[30%]'>
             <div className='w-full h-[150px] my-8'>
-            <img src='/public/manualoffice.png' alt='/' className='w-full h-full' />
+            <img src='/manualoffice.png' alt='/' className='w-full h-full' />
             </div>
-           <div className=''>
+           <div className='mt-2'>
            <h2 className='font-semibold text-lg md:mt-[10px]'>Handboek Kantoor</h2>
             <p className='my-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, similique. Incidunt commodi, provident nam.</p>
            </div>
