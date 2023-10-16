@@ -3,7 +3,7 @@ import Carousel from "./carousel ";
 
 function HeroSection() {
   return (
-    <div className="w-full mt-[55px] flex flex-col items-center justify-center">
+    <div className="w-full h-[2000px] mt-[55px] flex flex-col items-center justify-center">
       <div className="w-[90%] md:w-[35%] flex flex-col items-center justify-center ">
         <Link
           to="manual-training"
