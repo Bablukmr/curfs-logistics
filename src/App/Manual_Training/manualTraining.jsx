@@ -4,23 +4,23 @@ import { Link } from 'react-router-dom'
 
 function ManualTraining() {
 const data=[
-    {img:'/public/manualoffice.png',
+    {img:'/manualoffice.png',
     title:"Manual office",
     param:"manual-office"
     },
-    {img:'/public/manuallogistics.png',
+    {img:'/manuallogistics.png',
     title:"Manual logistics",
     param:"manual-logistics"
     },
-    {img:'/public/manualoffice.png',
+    {img:'/manualoffice.png',
     title:"Training IFS 2023",
     param:"manual-logistics"
     },
-    {img:'/public/manuallogistics.png',
+    {img:'/manuallogistics.png',
     title:"Manual logistics",
     param:"manual-office"
     },
-    {img:'/public/manuallogistics.png',
+    {img:'/manuallogistics.png',
     title:"Manual logistics",
     param:"manual-logistics"
     },
