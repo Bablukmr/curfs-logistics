@@ -27,8 +27,8 @@ const data=[
 ]
 
   return (
-    <div className='mt-[55px]'>
-        <div className='mt-8 w-[80%] ml-[10%] md:w-[25%] md:ml-[35%] flex gap-4 md:gap-10 flex-col items-center justify-center'>
+    <div className='mt-[55px] mb-8'>
+        <div className='mt-8 w-[86%] ml-[7%] md:w-[25%] md:ml-[37.5%] flex gap-4 md:gap-10 flex-col items-center justify-center'>
        {data.map((item,index)=>(
         <Link to={item.param} key={index} className='w-full h-[185px] rounded-md relative'>
       <div>

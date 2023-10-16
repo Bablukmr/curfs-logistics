@@ -60,7 +60,7 @@ function Carousel() {
               className="rounded-md w-full h-[180px]"
             />
             <div className="w-full bg-black opacity-50 h-[61px] absolute bottom-0"></div>
-            <h3 className="text-xl font-bold text-white absolute bottom-4 left-4">
+            <h3 className="text-lg font-bold text-white absolute bottom-4 left-4">
               {data[currentIndex].title}
             </h3>
           </div>

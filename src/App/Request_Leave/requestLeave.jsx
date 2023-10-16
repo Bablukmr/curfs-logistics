@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 function RequestLeave() {
   return (
-    <div className="mt-[55px] w-full">
-      <div className="w-[80%] ml-[10%] md:ml-[35%] md:w-[30%]">
-        <h2 className="font-semibold text-xl mt-4">Request Leave of absence</h2>
+    <div className="mt-[55px] mb-6 w-full">
+      <div className="w-[86%] ml-[7%] md:ml-[35%] md:w-[30%]">
+        <h2 className="font-semibold text-lg mt-4">Request Leave of absence</h2>
         <p className="my-3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
           similique. Incidunt commodi, provident nam.
@@ -46,7 +46,7 @@ function RequestLeave() {
               <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
                 <select
                   placeholder="10-3-23"
-                  className="text-sm h-10 border-none w-[90%] md:w-full bg-[#fafafa] outline-none px-2"
+                  className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
                 >
                   <option  value="volvo">Volvo</option>
                   <option value="saab">Saab</option>
@@ -58,7 +58,7 @@ function RequestLeave() {
             </div>
             <div className="w-full">
               <label className="">Radio Button</label>
-              <div className="flex gap-2">
+              <div className="flex mt-2 gap-2">
                 <label>
                   <input type="radio" name="radioGroup" value="radio1" /> Radio
                   1

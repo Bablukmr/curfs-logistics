@@ -8,7 +8,7 @@ const [message,setMessage]=useState(true)
     <div>
 {message ? 
 <div className="flex w-full flex-col items-center justify-center">
-    <h1 className="my-14 text-lg font-semibold">
+    <h1 className="my-10 text-lg font-semibold">
     Request new password
     </h1>
     <form className="w-full flex flex-col items-center justify-center gap-10">
@@ -28,7 +28,7 @@ const [message,setMessage]=useState(true)
   </div>
   :
 <div className="flex w-full flex-col items-center justify-center">
-    <h1 className="my-14 text-lg font-semibold">
+    <h1 className="my-10 text-lg font-semibold">
       Login personnel application
     </h1>
     <div className="w-full flex flex-col items-center justify-center gap-10">
