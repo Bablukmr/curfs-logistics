@@ -37,7 +37,7 @@ function Carousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((currentIndex + 1) % data.length);
-    }, 4000); 
+    }, 6000); 
 
     return () => {
       clearInterval(timer);
@@ -50,16 +50,16 @@ function Carousel() {
 
   return (
     <div className="w-full my-6">
-      <div className="w-[84%] ml-[8%] md:w-[52%] md:ml-[24%] flex flex-col">
-        <h2 className="text-2xl text-start font-bold">Latest news</h2>
+      <div className="w-[90%] ml-[5%] md:w-[52%] md:ml-[24%] flex flex-col">
+        <h2 className="text-xl text-start font-semibold">Latest news</h2>
         <div>
-          <div className="w-full my-4 relative">
+          <div className="w-full my-4 relative rounded-md ">
             <img
               src={data[currentIndex].image}
               alt="img"
               className="rounded-md w-full h-[180px]"
             />
-            <div className="w-full bg-black opacity-50 h-[61px] absolute bottom-0"></div>
+            <div className="w-full bg-black opacity-50 h-[61px] rounded-b-md  absolute bottom-0"></div>
             <h3 className="text-lg font-bold text-white absolute bottom-4 left-4">
               {data[currentIndex].title}
             </h3>
