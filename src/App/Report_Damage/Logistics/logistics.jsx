@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Logistics() {
   return (
-    <div className="mt-[55px] w-full">
+    <div className="mt-[55px] mb-4 w-full">
       <div className="w-[86%] ml-[7%] md:ml-[35%] md:w-[30%]">
         <h2 className="font-semibold text-lg mt-4">Report damages logistics</h2>
         <p className="my-3">
@@ -26,7 +26,7 @@ function Logistics() {
               <input
                 type="search"
                 placeholder="Search vehicle"
-                className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
+                className="text-sm h-10 border-none w-full outline-none px-2"
               />
             </div>
           </div>
@@ -35,7 +35,7 @@ function Logistics() {
             <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
               <select
                 placeholder="10-3-23"
-                className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
+                className="text-sm h-10 border-none w-full  outline-none px-2"
               >
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>

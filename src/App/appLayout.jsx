@@ -2,12 +2,45 @@
 import Header from "./Header";
 import AppRoutes from "./appRoutes";
 import { useState } from "react";
-import { HiX } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { IoMdClose } from "react-icons/io";
+import { Link, useNavigate } from "react-router-dom";
 
 function AppLayout() {
-  // if not token redirect to auth  componentsdidmounts
-
+  // if not token redirect to auth
+  const [menue,setMenue]=useState(null)
+  const menueItems = [
+    {
+      id: 1,
+      value: "overview",
+      url: "/",
+    },
+    {
+      id: 2,
+      value: "Manual & training",
+      url: "/manual-training",
+    },
+    {
+      id: 3,
+      value: "News",
+      url: "/news",
+    },
+    {
+      id: 4,
+      value: " Report damage",
+      url: "/report-damage",
+    },
+    {
+      id: 5,
+      value: "Request leave",
+      url: "/request-leave",
+    },
+    {
+      id: 6,
+      value: "Documets",
+      url: "/documets",
+    },
+  ];
+  const navigate = useNavigate();
   const [drawer, setDrawer] = useState(false);
 
   return (
@@ -35,73 +68,30 @@ function AppLayout() {
         }`}
       >
         <div className="bg-white h-full w-full relative flex flex-col ">
-          <div className="flex items-center justify-center mt-16">
-            <div className="absolute right-0 top-0 m-4 text-lg cursor-pointer">
-              <HiX
+          <div className="flex mt-16">
+            <div className="absolute right-0 top-0 m-4 text-2xl cursor-pointer">
+              <IoMdClose
                 onClick={() => {
                   setDrawer(false);
                 }}
               />
             </div>
-            <img src="/logo2.png" alt="/" />
+            <div className="w-[92%] ">
+              <img src="/logo.svg" alt="Curfts-Logistics" />
+            </div>
           </div>
-          <ul className="flex flex-col gap-4 text-base font-medium px-4 mt-14">
-            <li>
-              <Link to="/" onClick={() => setDrawer(false)} className="ml-2">
-                Overview
-              </Link>
-              <p className="border-b-2 mt-2"></p>
-            </li>
-            <li>
-              <Link
-                to="/manual-training"
-                onClick={() => setDrawer(false)}
-                className="ml-2"
+          <ul className="flex  w-full flex-col gap-y-2 text-base font-medium  mt-10">
+            {menueItems.map((item) => (
+              <li
+                onClick={() => {
+                  setDrawer(false), navigate(item.url) , setMenue(item.id)
+                }}
+                key={item.id}
+                className={`w-[90%] rounded-md ml-[5%] cursor-pointer ${menue==item.id ? "bg-[#fafafa]" : " "} `}
               >
-                Manual & training
-              </Link>
-              <p className="border-b-2 mt-2"></p>
-            </li>
-            <li>
-              <Link
-                to="/news"
-                onClick={() => setDrawer(false)}
-                className="ml-2"
-              >
-                News
-              </Link>
-              <p className="border-b-2 mt-2"></p>
-            </li>
-            <li>
-              <Link
-                to="/report-damage"
-                onClick={() => setDrawer(false)}
-                className="ml-2"
-              >
-                Report damage
-              </Link>
-              <p className="border-b-2 mt-2"></p>
-            </li>
-            <li>
-              <Link
-                to="/request-leave"
-                onClick={() => setDrawer(false)}
-                className="ml-2"
-              >
-                Request leave
-              </Link>
-              <p className="border-b-2 mt-2"></p>
-            </li>
-            <li>
-              <Link
-                to="/documets"
-                onClick={() => setDrawer(false)}
-                className="ml-2"
-              >
-                Documents
-              </Link>
-              <p className="border-b-2 mt-2"></p>
-            </li>
+                <p className="w-full pl-2 py-2 border-b-2"> {item.value}</p>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="absolute bottom-0 left-0 m-4">

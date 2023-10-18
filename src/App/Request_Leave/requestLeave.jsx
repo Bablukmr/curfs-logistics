@@ -17,7 +17,7 @@ function RequestLeave() {
               <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
                 <input
                   placeholder="Verlofuren (44:24)"
-                  className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
+                  className="text-sm h-10 border-none w-full outline-none px-2"
                 />
               </div>
             </div>
@@ -27,7 +27,7 @@ function RequestLeave() {
                 <input
                   type="date"
                   placeholder="10-3-23"
-                  className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
+                  className="text-sm h-10 border-none w-full  outline-none px-2"
                 />
               </div>
             </div>
@@ -37,7 +37,7 @@ function RequestLeave() {
                 <input
                   type="date"
                   placeholder="10-3-23"
-                  className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
+                  className="text-sm h-10 border-none w-full  outline-none px-2"
                 />
               </div>
             </div>
@@ -46,7 +46,7 @@ function RequestLeave() {
               <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
                 <select
                   placeholder="10-3-23"
-                  className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
+                  className="text-sm h-10 border-none w-full outline-none px-2"
                 >
                   <option  value="volvo">Volvo</option>
                   <option value="saab">Saab</option>
@@ -79,7 +79,7 @@ function RequestLeave() {
               <div className="border-[#A2A2A7] mt-2 h-[150px] rounded-md border border-solid flex items-center px-2">
                 <textarea
                   
-                  className="text-sm border-none w-full h-full bg-[#fafafa] outline-none p-2"
+                  className="text-sm border-none w-full h-full outline-none p-2"
                 />
               </div>
             </div>
