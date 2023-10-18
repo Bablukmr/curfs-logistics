@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Carousel from "./carousel ";
-import {FaBookOpen,FaRegNewspaper,FaExclamationCircle,FaStopwatch,FaBook} from 'react-icons/fa'
+import {FaBookOpen,FaExclamationCircle,FaStopwatch,FaBook} from 'react-icons/fa'
+import {CgFileDocument} from "react-icons/cg"
 
 function HeroSection() {
   return (
@@ -27,7 +28,7 @@ function HeroSection() {
         >
           <div className="w-[15%] flex items-center justify-center">
             {/* <img src="/news.png" width={20} alt="/" /> */}
-            <FaRegNewspaper className="w-[24px] h-[20px]"/>
+            <CgFileDocument className="w-[24px] h-[20px]"/>
           </div>
           <div className="w-[80%] ">
             <div className="flex flex-col">
