@@ -4,7 +4,7 @@ import { HiChevronRight } from "react-icons/hi";
 function News() {
   return (
     <div className=" mt-[56px] w-full ">
-      <div className="w-[86%] ml-[7%] md:w-[30%] md:ml-[35%] flex flex-col border-b-2">
+      <div className="w-[90%] ml-[5%] md:w-[30%] md:ml-[35%] flex flex-col border-b-2">
         <h2 className="text-lg my-5 font-bold">News</h2>
         <div className="w-full h-[185px] relative">
           <img src="/news1.png" alt="img" className="w-full h-[185px]" />

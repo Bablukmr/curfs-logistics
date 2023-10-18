@@ -26,6 +26,9 @@ function LogInEmail() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    const path=localStorage.getItem("path")
+    // console.log(path);
     setLoading(true);
 
     try {
@@ -36,7 +39,8 @@ function LogInEmail() {
 
       if (response.status === 200) {
         const token = response.data.key;
-        navigate("/");
+        navigate(path ? path :"/");
+        // localStorage.removeItem("path")
         localStorage.setItem("token", token);
       } else {
         console.error("Login failed");
@@ -67,29 +71,29 @@ function LogInEmail() {
       </div>
 
       <div className="flex w-full flex-col items-center justify-center">
-        <h1 className="my-10 text-lg font-semibold">
+        <h1 className="my-8 text-lg font-semibold">
           Login personnel application
         </h1>
-        <form className="w-full flex flex-col items-center justify-center gap-6">
+        <form className="w-full flex flex-col items-center justify-center gap-3">
           <div className="w-full">
-            <label className="">E-mail</label>
-            <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
+            <label className="text-sm">E-mail</label>
+            <div className="border-[#A2A2A7]  mt-2 rounded-md border border-solid flex items-center px-2">
               <input
                 type="email"
                 placeholder="E-mail"
-                className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
+                className="text-sm h-10 border-none w-full outline-none px-2"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
           <div className="w-full">
-            <label className="">Password</label>
+            <label className="text-sm">Password</label>
             <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
               <input
                 type="password"
                 placeholder="Password"
-                className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
+                className="text-sm h-10 border-none w-full  outline-none px-2"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -98,7 +102,7 @@ function LogInEmail() {
           <button
             onClick={handleLogin}
             disabled={loading}
-            className={`w-full text-center mt-3 py-3 rounded-md text-white ${
+            className={`w-full text-center mt-3   py-3 rounded-md text-white ${
               loading ? "bg-[#7474b7] cursor-not-allowed" : "bg-[#2B3087] "
             }`}
           >
@@ -108,7 +112,7 @@ function LogInEmail() {
         <div className="mt-4 text-sm text-center">
           <p className="text-sm">
             Forgot your password?{" "}
-            <Link to={"/auth/password-reset"} className="text-blue-900">
+            <Link to={"/auth/password-reset"} className="text-blue-900 text-sm underline">
               Request a new password
             </Link>
           </p>

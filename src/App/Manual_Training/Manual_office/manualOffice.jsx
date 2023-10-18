@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Manualoffice() {
   return (
     <div className='mt-[55px] mb-8 w-full'>
-        <div className='w-[86%] ml-[7%] md:ml-[35%] md:w-[30%]'>
+        <div className='w-[90%] ml-[5%] md:ml-[35%] md:w-[30%]'>
             <div className='w-full h-[150px] my-8'>
             <img src='/manualoffice.png' alt='/' className='w-full h-full' />
             </div>

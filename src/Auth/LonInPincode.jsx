@@ -3,16 +3,16 @@ import { Link } from "react-router-dom"
 function LonInPincode() {
   return (
     <div className="flex w-full flex-col items-center justify-center">
-    <h1 className="my-10 text-lg font-semibold">
+    <h1 className="my-8 text-lg font-semibold">
       Login personnel application
     </h1>
-    <form className="w-full flex flex-col items-center justify-center gap-10">
+    <form className="w-full flex flex-col items-center justify-center gap-6">
       <div className="w-full">
-        <label className="">Pincode</label>
+        <label className="text-sm">Pincode</label>
         <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
           <input
             placeholder="Pincode"
-            className="text-sm h-10 border-none w-full bg-[#fafafa] outline-none px-2"
+            className="text-sm h-10 border-none w-full outline-none px-2"
           />
         </div>
       </div>
