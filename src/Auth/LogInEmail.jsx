@@ -1,21 +1,46 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
 import NotificationBox from "../Componets/notificationbox";
+import { userLogIn } from "../store/action";
+import { useSelector, useDispatch } from "react-redux";
 
 function LogInEmail() {
-  const url = "https://testapi.nhustle.in/dj-rest-auth/login/";
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const token = useSelector((state) => state.AuthReducer.token);
+  const loadingLogin = useSelector((state) => state.AuthReducer.loadingLogin);
+
+  const loginError = useSelector((state) => state.AuthReducer.loginError);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const [showNotification, setShowNotification] = useState(false);
   const [notificationType, setNotificationType] = useState(null);
   const [notificationTitle, setNotificationTitle] = useState(null);
   const [notificationBody, setNotificationBody] = useState(null);
+
+  const urlToGo = localStorage.getItem("path");
+
+  useEffect(() => {
+    if (urlToGo) {
+      if (token) navigate(urlToGo);
+    } else {
+      if (token) navigate("/");
+    }
+  }, [token]);
+
+  useEffect(() => {
+    if (loginError) {
+      setNotificationTitle("Error !!");
+      setNotificationBody("Something went wrong.");
+      setNotificationType("error");
+      shownotiftion();
+    }
+  }, [loginError]);
 
   const shownotiftion = () => {
     setShowNotification(true);
@@ -24,36 +49,61 @@ function LogInEmail() {
     }, 5000);
   };
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
 
-    const path=localStorage.getItem("path")
-    // console.log(path);
-    setLoading(true);
-
-    try {
-      const response = await axios.post(url, {
-        email: email,
-        password: password,
-      });
-
-      if (response.status === 200) {
-        const token = response.data.key;
-        navigate(path ? path :"/");
-        // localStorage.removeItem("path")
-        localStorage.setItem("token", token);
-      } else {
-        console.error("Login failed");
-      }
-    } catch (error) {
-      console.error("Login error:", error);
+    if (!password) {
       setNotificationTitle("Error !!");
-      setNotificationBody("Something went wrong.");
+      setNotificationBody("Password missing.");
       setNotificationType("error");
       shownotiftion();
     }
-    setLoading(false);
+
+    if (!email) {
+      setNotificationTitle("Error !!");
+      setNotificationBody("Email missing.");
+      setNotificationType("error");
+      shownotiftion();
+    } else {
+      let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (regexEmail.test(email)) {
+        if (password) dispatch(userLogIn(email, password));
+      } else {
+        setNotificationTitle("Error !!");
+        setNotificationBody("Wrong email format.");
+        setNotificationType("error");
+        shownotiftion();
+      }
+    }
   };
+
+  // const path = localStorage.getItem("path");
+  // // console.log(path);
+  // setLoading(true);
+
+  // try {
+  //   const response = await axios.post(url, {
+  //     email: email,
+  //     password: password,
+  //   });
+
+  //   if (response.status === 200) {
+  //     const token = response.data.key;
+  //     navigate(path ? path : "/");
+  //     // localStorage.removeItem("path")
+  //     localStorage.setItem("token", token);
+  //   } else {
+  //     console.error("Login failed");
+  //   }
+  // } catch (error) {
+  //   console.error("Login error:", error);
+  //   setNotificationTitle("Error !!");
+  //   setNotificationBody("Something went wrong.");
+  //   setNotificationType("error");
+  //   shownotiftion();
+  // }
+  // setLoading(false);
+  // };
 
   return (
     <>
@@ -101,18 +151,21 @@ function LogInEmail() {
           </div>
           <button
             onClick={handleLogin}
-            disabled={loading}
+            disabled={loadingLogin}
             className={`w-full text-center mt-3   py-3 rounded-md text-white ${
-              loading ? "bg-[#7474b7] cursor-not-allowed" : "bg-[#2B3087] "
+              loadingLogin ? "bg-[#7474b7] cursor-not-allowed" : "bg-[#2B3087] "
             }`}
           >
-            {loading ? "Logging In..." : "Login"}
+            {loadingLogin ? "Logging In..." : "Login"}
           </button>
         </form>
         <div className="mt-4 text-sm text-center">
           <p className="text-sm">
             Forgot your password?{" "}
-            <Link to={"/auth/password-reset"} className="text-blue-900 text-sm underline">
+            <Link
+              to={"/auth/password-reset"}
+              className="text-blue-900 text-sm underline"
+            >
               Request a new password
             </Link>
           </p>

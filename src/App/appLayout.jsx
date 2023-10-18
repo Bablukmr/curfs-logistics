@@ -1,13 +1,31 @@
 // import Header from "./header";
 import Header from "./Header";
 import AppRoutes from "./appRoutes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import { useSelector, useDispatch } from "react-redux";
+import { userLogin } from "../store/action";
 
 function AppLayout() {
-  // if not token redirect to auth
-  const [menue,setMenue]=useState(null)
+  const token = useSelector((state) => state.AuthReducer.token);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!token) {
+      const tokenn = localStorage.getItem("token");
+      if (tokenn) {
+        dispatch(userLogin(tokenn));
+      } else {
+        navigate("/auth");
+        window.location.reload();
+      }
+    }
+  }, [token]);
+
+
+  const [menue, setMenue] = useState(null);
   const menueItems = [
     {
       id: 1,
@@ -84,10 +102,12 @@ function AppLayout() {
             {menueItems.map((item) => (
               <li
                 onClick={() => {
-                  setDrawer(false), navigate(item.url) , setMenue(item.id)
+                  setDrawer(false), navigate(item.url), setMenue(item.id);
                 }}
                 key={item.id}
-                className={`w-[90%] rounded-md ml-[5%] cursor-pointer ${menue==item.id ? "bg-[#fafafa]" : " "} `}
+                className={`w-[90%] rounded-md ml-[5%] cursor-pointer ${
+                  menue == item.id ? "bg-[#fafafa]" : " "
+                } `}
               >
                 <p className="w-full pl-2 py-2 border-b-2"> {item.value}</p>
               </li>
