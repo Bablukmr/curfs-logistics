@@ -34,9 +34,9 @@ const data=[
       <div>
       <img src={item.img} alt='/' className='w-full h-[185px] ' />
       </div>
-      <div className='bg-[#2B3087] absolute bottom-0 rounded-b-md w-full h-[50px] flex justify-around items-center text-white text-lg font-semibold'>
-        <h2>{item.title}</h2>
-        <div className='text-3xl font-bold'>
+      <div className='bg-[#2B3087] absolute bottom-0 rounded-b-md w-full h-[50px] flex justify-around items-center text-white'>
+        <p className='text-lg font-medium'>{item.title}</p>
+        <div className='text-2xl font-bold'>
         <HiChevronRight/>
         </div>
       </div>
