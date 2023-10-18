@@ -69,7 +69,7 @@ function AppLayout() {
       >
         <div className="bg-white h-full w-full relative flex flex-col ">
           <div className="flex mt-16">
-            <div className="absolute right-0 top-0 m-4 text-2xl cursor-pointer">
+            <div className="absolute right-0 top-0 m-4 text-3xl cursor-pointer">
               <IoMdClose
                 onClick={() => {
                   setDrawer(false);
