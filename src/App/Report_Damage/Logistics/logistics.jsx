@@ -35,7 +35,7 @@ function Logistics() {
             <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
               <select
                 placeholder="10-3-23"
-                className="text-sm h-10 border-none w-full  outline-none px-2"
+                className="text-sm h-10 border-none w-full bg-white  outline-none px-2"
               >
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>

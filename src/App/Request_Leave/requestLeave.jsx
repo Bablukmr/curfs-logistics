@@ -27,17 +27,17 @@ function RequestLeave() {
                 <input
                   type="date"
                   placeholder="10-3-23"
-                  className="text-sm h-10 border-none w-full  outline-none px-2"
+                  className="text-sm h-10 bg-white border-none w-full  outline-none px-2"
                 />
               </div>
             </div>
             <div className="w-full">
               <label className="">t/m</label>
-              <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
+              <div className="border-[#A2A2A7]  mt-2 rounded-md border border-solid flex items-center px-2">
                 <input
                   type="date"
                   placeholder="10-3-23"
-                  className="text-sm h-10 border-none w-full  outline-none px-2"
+                  className="text-sm h-10 bg-white  border-none w-full  outline-none px-2"
                 />
               </div>
             </div>
@@ -46,7 +46,7 @@ function RequestLeave() {
               <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
                 <select
                   placeholder="10-3-23"
-                  className="text-sm h-10 border-none w-full outline-none px-2"
+                  className="text-sm h-10 bg-white  border-none w-full outline-none px-2"
                 >
                   <option  value="volvo">Volvo</option>
                   <option value="saab">Saab</option>
