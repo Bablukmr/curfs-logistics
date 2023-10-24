@@ -23,9 +23,9 @@ function AppRoutes() {
       <Route path="/news" element={<News/>}/>
       <Route path="/report-damage" element={<ReportDamage/>}/>
       <Route path="/report-damage/logistics" element={<Logistics/>}/>
-      <Route path="/documets" element={<Documents/>}/>
-      <Route path="/documets/proof-license" element={<ProofLicense/>}/>
-      <Route path="/documets/general-documents" element={<GeneralDocuments/>}/>
+      <Route path="/documents" element={<Documents/>}/>
+      <Route path="/documents/proof-license" element={<ProofLicense/>}/>
+      <Route path="/documents/general-documents" element={<GeneralDocuments/>}/>
       <Route path="/request-leave" element={<RequestLeave/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>

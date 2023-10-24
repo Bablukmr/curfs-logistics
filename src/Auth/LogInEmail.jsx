@@ -127,11 +127,11 @@ function LogInEmail() {
         <form className="w-full flex flex-col items-center justify-center gap-3">
           <div className="w-full">
             <label className="text-sm">E-mail</label>
-            <div className="border-[#A2A2A7]  mt-2 rounded-md border border-solid flex items-center px-2">
+            <div className="border-[#A2A2A7]  mt-2 rounded-md border border-solid flex items-center ">
               <input
                 type="email"
                 placeholder="E-mail"
-                className="text-sm h-10 border-none w-full outline-none px-2"
+                className="text-sm h-10 border-none w-full outline-none px-2 rounded-md"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -139,11 +139,11 @@ function LogInEmail() {
           </div>
           <div className="w-full">
             <label className="text-sm">Password</label>
-            <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
+            <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center">
               <input
                 type="password"
                 placeholder="Password"
-                className="text-sm h-10 border-none w-full  outline-none px-2"
+                className="text-sm h-10 border-none w-full  outline-none px-2 rounded-md"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />

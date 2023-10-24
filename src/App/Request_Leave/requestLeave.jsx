@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function RequestLeave() {
   return (
     <div className="mt-[55px] mb-6 w-full">
-      <div className="w-[86%] ml-[7%] md:ml-[35%] md:w-[30%]">
+      <div className="w-[90%] ml-[5%] md:ml-[35%] md:w-[30%]">
         <h2 className="font-semibold text-lg mt-4">Request Leave of absence</h2>
         <p className="my-3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
@@ -14,10 +14,10 @@ function RequestLeave() {
           <form className="w-full flex flex-col items-center justify-center gap-3">
             <div className="w-full">
               <label className="">Type*</label>
-              <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
+              <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center ">
                 <input
                   placeholder="Verlofuren (44:24)"
-                  className="text-sm h-10 border-none w-full outline-none px-2"
+                  className="text-sm h-10 border-none w-full outline-none px-2 rounded-md"
                 />
               </div>
             </div>

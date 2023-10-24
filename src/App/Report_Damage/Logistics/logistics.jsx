@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Logistics() {
   return (
     <div className="mt-[55px] mb-4 w-full">
-      <div className="w-[86%] ml-[7%] md:ml-[35%] md:w-[30%]">
+      <div className="w-[90%] ml-[5%] md:ml-[35%] md:w-[30%]">
         <h2 className="font-semibold text-lg mt-4">Report damages logistics</h2>
         <p className="my-3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,

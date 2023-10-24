@@ -4,6 +4,8 @@ import { useMemo } from "react";
 // import thunkMiddleware from "redux-thunk";
 // import reducers from "./reducers";
 import AuthReducer from "./reducers";
+// import { changeGlobalValue } from "./menuSlice";
+import activeMenu from "./activeMenuSlice"
 // import MenuReducer from "./menuReducer";
 import { configureStore } from "@reduxjs/toolkit";
 
@@ -23,6 +25,7 @@ function initStore() {
   return configureStore({
     reducer: {
       AuthReducer: AuthReducer,
+      activeMenu: activeMenu,
       //   MenuReducer: MenuReducer,
     },
   });
