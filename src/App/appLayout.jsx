@@ -4,12 +4,14 @@ import AppRoutes from "./appRoutes";
 import { useState, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-
 import { useSelector, useDispatch } from "react-redux";
 import { userLogin } from "../store/action";
+import { changeActiveMenu } from "../store/activeMenuSlice";
 
 function AppLayout() {
   const token = useSelector((state) => state.AuthReducer.token);
+  const idValue = useSelector((state) => state.activeMenu.idValue);
+  // console.log(idValue);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,12 +26,11 @@ function AppLayout() {
     }
   }, [token]);
 
-
-  const [menue, setMenue] = useState(null);
+  // const [menue, setMenue] = useState(null);
   const menueItems = [
     {
       id: 1,
-      value: "overview",
+      value: "Overview",
       url: "/",
     },
     {
@@ -54,12 +55,19 @@ function AppLayout() {
     },
     {
       id: 6,
-      value: "Documets",
-      url: "/documets",
+      value: "Documents",
+      url: "/documents",
     },
   ];
   const navigate = useNavigate();
   const [drawer, setDrawer] = useState(false);
+
+  // const [active, setActive] = useState(1);
+  const handleMenuList = (item) => {
+    setDrawer(false);
+    navigate(item.url);
+    dispatch(changeActiveMenu(item.id));
+  };
 
   return (
     <div>
@@ -67,7 +75,7 @@ function AppLayout() {
         <div>
           <Header setDrawer={setDrawer} />
         </div>
-        <div className="flex flex-col ">
+        <div className="flex flex-col">
           <AppRoutes />
         </div>
       </div>
@@ -94,22 +102,22 @@ function AppLayout() {
                 }}
               />
             </div>
-            <div className="w-[92%] ">
+            <div className="w-[82%] ml-1 ">
               <img src="/logo.svg" alt="Curfts-Logistics" />
             </div>
           </div>
           <ul className="flex  w-full flex-col gap-y-2 text-base font-medium  mt-10">
             {menueItems.map((item) => (
               <li
-                onClick={() => {
-                  setDrawer(false), navigate(item.url), setMenue(item.id);
-                }}
+                onClick={() => handleMenuList(item)}
                 key={item.id}
                 className={`w-[90%] rounded-md ml-[5%] cursor-pointer ${
-                  menue == item.id ? "bg-[#fafafa]" : " "
+                  item.id == idValue ? "bg-[#2B3087] text-white" : " "
                 } `}
               >
-                <p className="w-full pl-2 py-2 border-b-2"> {item.value}</p>
+                <p 
+                // ${ item.id == idValue ?"":"border-b-2" }
+                className={`w-full pl-2 py-2  border-b-2`}> {item.value}</p>
               </li>
             ))}
           </ul>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 function Carousel() {
+
   const data = [
     {
       title: "Title 1",
@@ -49,8 +50,8 @@ function Carousel() {
   };
 
   return (
-    <div className="w-full my-6">
-      <div className="w-[90%] ml-[5%] md:w-[52%] md:ml-[24%] flex flex-col">
+    <div className="w-full my-6 flex items-center justify-center">
+      <div className="w-[90%] md:w-[35%] flex flex-col">
         <h2 className="text-xl text-start font-semibold">Latest news</h2>
         <div>
           <div className="w-full my-4 relative rounded-md ">

@@ -14,10 +14,10 @@ const [message,setMessage]=useState(true)
     <form className="w-full flex flex-col items-center justify-center gap-6">
       <div className="w-full">
         <label className="text-sm">E-mail</label>
-        <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center px-2">
+        <div className="border-[#A2A2A7] mt-2 rounded-md border border-solid flex items-center">
           <input
             placeholder="E-mail"
-            className="text-sm h-10 border-none w-full outline-none px-2"
+            className="text-sm h-10 border-none w-full outline-none px-2 rounded-md"
           />
         </div>
       </div>
