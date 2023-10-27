@@ -24,7 +24,7 @@ function Header({ setDrawer }) {
           />
         </div>
         <Link to="/">
-        <img src="/Group18.png" width={150} alt="Curfts-Logistics" />
+        <img src="/Logo-white.svg" width={150} alt="Curfts-Logistics" />
         </Link>
         <div className="text-white text-2xl cursor-pointer">
           <HiOutlineUserCircle onClick={handleLogout} />
