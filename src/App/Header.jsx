@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useDispatch } from "react-redux";
 import { userLogout } from "../store/action";
 import { Link } from "react-router-dom";
+import { changeActiveMenu } from "../store/activeMenuSlice";
 
 function Header({ setDrawer }) {
   const dispatch = useDispatch();
@@ -24,7 +25,14 @@ function Header({ setDrawer }) {
           />
         </div>
         <Link to="/">
-        <img src="/Group18.png" width={150} alt="Curfts-Logistics" />
+          <img
+            onClick={() => {
+              dispatch(changeActiveMenu(1));
+            }}
+            src="/Group18.png"
+            width={150}
+            alt="Curfts-Logistics"
+          />
         </Link>
         <div className="text-white text-2xl cursor-pointer">
           <HiOutlineUserCircle onClick={handleLogout} />
