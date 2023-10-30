@@ -3,12 +3,19 @@ import { HiChevronRight } from "react-icons/hi";
 
 function News() {
   return (
-    <div className=" mt-[56px] w-full ">
+    <div className=" mt-[55px] w-full ">
       <div className="w-[90%] ml-[5%] md:w-[35%] md:ml-[30%] flex flex-col border-b-2">
         <h2 className="text-lg my-5 font-bold">News</h2>
-        <div className="w-full h-[185px] relative">
-          <img src="/news1.png" alt="img" className="w-full h-[185px]" />
-          <div className="absolute w-full bottom-0 h-[50px] bg-black opacity-60 flex items-center">
+        <div className="w-full relative ">
+          <div className="aspect-video ">
+            <img
+              src="/curfs6.jpg"
+              alt="img"
+              className=" object-cover w-full h-full rounded-md"
+            />
+          </div>
+
+          <div className="absolute w-full bottom-0 h-[50px] rounded-b-md bg-black opacity-60 flex items-center">
             <h3 className="text-lg ml-6 font-semibold text-white">
               title of news
             </h3>

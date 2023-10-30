@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  idValue: 1, // Initial ID
+  idValue: 1,
 };
 
 const activeMenu = createSlice({
