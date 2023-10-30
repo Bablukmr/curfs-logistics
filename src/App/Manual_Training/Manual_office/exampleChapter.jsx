@@ -3,7 +3,7 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 function ExamplChapter() {
   return (
-    <div className="mt-[55px] mb-8 w-full">
+    <div className=" w-full mt-[55px] mb-8">
       <div className="w-[90%] ml-[5%] md:ml-[35%] md:w-[30%]">
         <h2 className="font-semibold text-lg mt-4">Example chapter</h2>
         <p className="my-3">
@@ -34,7 +34,7 @@ function ExamplChapter() {
             <div className="p-1 bg-blue-200 rounded-md text-white text-2xl font-bold">
               <HiChevronLeft />
             </div>
-            <div className="p-1 bg-blue-700 rounded-md text-white text-2xl font-bold">
+            <div className="p-1 bg-[#2B3087] cursor-pointer rounded-md text-white text-2xl font-bold">
               <HiChevronRight />
             </div>
           </div>
