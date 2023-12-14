@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer base {
+  ul, ol {
+    list-style: revert;
+  }
+} */
 
 p,
 h1,
