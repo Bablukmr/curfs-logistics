@@ -75,7 +75,7 @@ function TrainingQuestion() {
           <div className=" w-full mt-[55px] mb-8">
             <div className="w-[90%] ml-[5%] md:ml-[35%] md:w-[30%]">
               <h2 className="font-semibold text-lg my-4">Food defence</h2>
-              <p className="my-3">
+              <p className="mt-3 mb-5">
                 Food defense is het beveiligen van de productiefaciliteit tegen
                 kwaadwillige acties die de veiligheid van een product bedreigen.
               </p>
@@ -88,7 +88,7 @@ function TrainingQuestion() {
                       Question {b + 1}
                     </h1>
                     <p className="m-0 p-0 my-2"> {a.title}</p>
-                    <div className="flex flex-col gap-y-4 ">
+                    <div className="flex flex-col gap-y-4 mb-5 ">
                       <div className="flex gap-x-4 items-center ">
                         <p className="w-[100px] text-center rounded-md p-[1px] border border-[#2B3087]">
                           {a.op1}
