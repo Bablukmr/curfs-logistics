@@ -6,11 +6,13 @@ import Notificationbox from "../../../Componets/notificationbox";
 
 function Manualoffice() {
   const param = useParams();
-  const { name, id } = useParams();
-  const newparm = name.split("list")[0];
-  console.log(newparm);
-  console.log(name);
+  const { id } = useParams();
   console.log(id);
+  // const { name, id } = useParams();
+  // const newparm = name.split("list")[0];
+  // console.log(newparm);
+  // console.log(name);
+  // console.log(id);
   //https://localhost${name==="manuallist" ? "namual :"training"}/${id}
   //  console.log(param);
   // const param1 = param.name.split("-")[0];
@@ -38,16 +40,12 @@ function Manualoffice() {
     }, 5000);
   };
 
-  console.log("val", titleDes.title);
+  console.log("listData", listData);
 
   useEffect(() => {
     setLoading1(true);
     axios
-      .get(
-        `https://testapi.nhustle.in/app/${
-          name === "manuallist" ? "manual" : "training"
-        }/${id}`
-      )
+      .get(`https://testapi.nhustle.in/app/manual/${id}`)
       .then((res) => {
         // console.log(res);
         setTitleDes(res.data);
@@ -66,7 +64,7 @@ function Manualoffice() {
   useEffect(() => {
     setLoading2(true);
     axios
-      .get(`https://testapi.nhustle.in/app/${name}?id=${id}`)
+      .get(`https://testapi.nhustle.in/app/manuallist?id=${id}`)
       .then((res) => {
         setListData(res.data);
         // console.log(res);
@@ -81,7 +79,6 @@ function Manualoffice() {
         shownotiftion();
       });
   }, []);
-
 
   return (
     <>
@@ -105,21 +102,22 @@ function Manualoffice() {
             <div className="w-[90%] mt-5 md:w-[35%]">
               <div className="aspect-video">
                 <img
-                  src="/curfs7.jpg"
-                  alt="img"
+                  src= {titleDes?.img}
+                  // src="/curfs7.jpg"
+                  alt= {titleDes?.title}
                   className="rounded-md object-cover w-full h-full"
                 />
               </div>
 
               <div className="mt-2">
                 <h2 className="font-semibold text-lg mb-2 md:mt-[10px]">
-                  {titleDes.title}
+                  {titleDes?.title}
                 </h2>
                 {/* <div className="bg-blue-600 w-[20%]"> */}
 
-                <div dangerouslySetInnerHTML={{ __html: titleDes.desc }} />
+                <div dangerouslySetInnerHTML={{ __html: titleDes?.desc }} />
                 {/* </div> */}
-                
+
                 {/* <p className="my-2 font-normal text-[12px]">
             Curfs Logistics B.V. en Curfs Warehouse B.V. hecht belang aan veilig
             en gezond werken; dat komt immers de dienstverlening ten goede. Jouw

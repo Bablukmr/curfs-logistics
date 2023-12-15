@@ -106,7 +106,7 @@ function AppLayout() {
               <img src="/logo.svg" alt="Curfts-Logistics" />
             </div>
           </div>
-          <ul className="flex  w-full flex-col gap-y-2 text-base font-medium  mt-10">
+          <ul className="flex list-none m-0 p-0 w-full flex-col gap-y-2 text-base font-medium  mt-10">
             {menueItems.map((item) => (
               <li
                 onClick={() => handleMenuList(item)}

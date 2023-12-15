@@ -7,11 +7,14 @@ import News from "./News/news";
 import ReportDamage from "./Report_Damage/reportDamage";
 import Documents from "./Documents/documents";
 import RequestLeave from "./Request_Leave/requestLeave";
-import Manualoffice from "./Manual_Training/details/manualOffice";
-import ExamplChapter from "./Manual_Training/details/exampleChapter";
+import Manualoffice from "./Manual_Training/details/manualList";
+import ExamplChapter from "./Manual_Training/details/ManualChapter";
 import ProofLicense from "./Documents/Proof_License/proofLicense";
 import GeneralDocuments from "./Documents/General_Documents/generalDocuments";
 import Logistics from "./Report_Damage/Logistics/logistics";
+import TrainigList from "./Manual_Training/details/trainigList";
+import TrainingQuestion from "./Manual_Training/details/trainingQuestion";
+import DetailedNews from "./News/detailedNews";
 
 function AppRoutes() {
   return (
@@ -19,10 +22,14 @@ function AppRoutes() {
       <Route path="/" element={<HeroSection />}/>
       <Route path="/manual-training" element={<ManualTraining/>}/>
 
-      <Route path="manual-training/:name/:id" element={<Manualoffice/>}/>
+      <Route path="manual-training/manuallist/:id" element={<Manualoffice/>}/>
+      <Route path="manual-training/traininglist/:id" element={<TrainigList/>}/>
 
-      <Route path="manual-training/:name/:id/:ids" element={<ExamplChapter/>}/>
+      <Route path="manual-training/manuallist/:id/:ids" element={<ExamplChapter/>}/>
+      <Route path="manual-training/traininglist/:id/:ids" element={<TrainingQuestion/>}/>
+
       <Route path="/news" element={<News/>}/>
+      <Route path="/news/:id" element={<DetailedNews/>}/>
       <Route path="/report-damage" element={<ReportDamage/>}/>
       <Route path="/report-damage/logistics" element={<Logistics/>}/>
       <Route path="/documents" element={<Documents/>}/>

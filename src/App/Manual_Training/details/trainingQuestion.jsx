@@ -5,11 +5,10 @@ import axios from "axios";
 import Notificationbox from "../../../Componets/notificationbox";
 import Loading from "../../../Componets/loading";
 
-function ExamplChapter() {
-
+function TrainingQuestion() {
   const param = useParams();
-  const { name, id, ids } = useParams();
-  console.log(name);
+  const { ids } = useParams();
+  //   console.log(name);
   // const ids = param.ids;
   console.log(ids);
 
@@ -20,6 +19,7 @@ function ExamplChapter() {
 
   const [apiData, setApiData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [question,setQuestion]=useState()
 
   const [showNotification, setShowNotification] = useState(false);
   const [notificationType, setNotificationType] = useState(null);
@@ -37,13 +37,9 @@ function ExamplChapter() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(
-        `https://testapi.nhustle.in/app/act-${
-          name === "manuallist" ? "manual" : "training"
-        }/${ids}`
-      )
+      .get(`https://testapi.nhustle.in/app/traininglist?id=${ids}`)
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         setApiData(res.data);
         setLoading(false);
       })
@@ -78,39 +74,55 @@ function ExamplChapter() {
         ) : (
           <div className=" w-full mt-[55px] mb-8">
             <div className="w-[90%] ml-[5%] md:ml-[35%] md:w-[30%]">
-              <h2 className="font-semibold text-lg my-4">{apiData?.title}</h2>
-              <div dangerouslySetInnerHTML={{ __html: apiData?.desc }} />
-
-              {/* <h2 className="font-semibold text-lg mt-4">Example chapter</h2> */}
-              {/* <p className="my-3">
-          Curfs Logistics B.V. en Curfs Warehouse B.V. hecht belang aan veilig
-          en gezond werken; dat komt immers de dienstverlening ten goede. Jouw
-          ervaring en vakbekwaamheid spelen daarbij een belangrijke rol
-        </p> */}
-              {/* <div className="my-4">
-          <li>Voorbeeld van een punt</li>
-          <li>Voorbeeld van een punt</li>
-          <li>Voorbeeld van een punt</li>
-        </div> */}
-              {/* <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-          perspiciatis?
-        </p> */}
-              {/* <div className="p-3 my-5 bg-[#FFE57F] rounded-md">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas hic
-            animi a ullam ab ea nobis deleniti ex nulla reprehenderit.
-          </p>
-        </div> */}
-              <div className="fixed bottom-0 w-[90%] md:w-[35%] flex items-center justify-between h-[70px] border-t-2">
-                <Link onClick={()=>window.history.back()} className="w-[120px] h-[45px] flex items-center justify-center rounded-md bg-[#2B3087] text-white">
+              <h2 className="font-semibold text-lg my-4">Food defence</h2>
+              <p className="my-3">
+                Food defense is het beveiligen van de productiefaciliteit tegen
+                kwaadwillige acties die de veiligheid van een product bedreigen.
+              </p>
+             
+              <div className="mb-[70px]">
+                {apiData?.map((a, b) => (
+                  <div key={b}>
+                    
+                    <h1 className="font-semibold text-base my-3">
+                      Question {b + 1}
+                    </h1>
+                    <p className="m-0 p-0 my-2"> {a.title}</p>
+                    <div className="flex flex-col gap-y-4 ">
+                      <div className="flex gap-x-4 items-center ">
+                        <p className="w-[100px] text-center rounded-md p-[1px] border border-[#2B3087]">
+                          {a.op1}
+                        </p>
+                        <p className="w-[100px] text-center rounded-md p-[1px] border border-[#2B3087]">
+                          {a.op2}
+                        </p>
+                      </div>
+                      <div className="flex gap-x-4 items-center ">
+                        <p className="w-[100px] text-center rounded-md p-[1px] border border-[#2B3087]">
+                          {a.op3}
+                        </p>
+                        <p className="w-[100px] text-center rounded-md p-[1px] border border-[#2B3087]">
+                          {a.op4}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="fixed bottom-0 bg-white w-[90%] md:w-[35%] flex items-center justify-between h-[70px] border-t-2">
+                <Link
+                  onClick={() => window.history.back()}
+                  className="w-[120px] h-[45px] flex items-center justify-center rounded-md bg-[#2B3087] text-white"
+                >
                   overview
                 </Link>
                 <div className="flex gap-6 ">
                   <div className="p-1 bg-blue-200 rounded-md text-white text-2xl font-bold">
                     <HiChevronLeft />
                   </div>
-                  <div className="p-1 bg-[#2B3087] cursor-pointer rounded-md text-white text-2xl font-bold">
+                  <div
+                  // onClick={()=>}
+                  className="p-1 bg-[#2B3087] cursor-pointer rounded-md text-white text-2xl font-bold">
                     <HiChevronRight />
                   </div>
                 </div>
@@ -123,4 +135,4 @@ function ExamplChapter() {
   );
 }
 
-export default ExamplChapter;
+export default TrainingQuestion;

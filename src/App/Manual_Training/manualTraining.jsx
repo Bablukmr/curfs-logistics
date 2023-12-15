@@ -90,7 +90,7 @@ function ManualTraining() {
       >
         <div className="aspect-video">
           <img
-            src={"/curfs2.jpg"}
+            src={item.img}
             // src={item.img}
             alt={item.title}
             className="rounded-md object-cover w-full h-full"

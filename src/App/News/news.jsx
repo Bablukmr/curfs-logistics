@@ -1,55 +1,102 @@
 import { Link } from "react-router-dom";
 import { HiChevronRight } from "react-icons/hi";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Notificationbox from "../../Componets/notificationbox";
+import Loading from "../../Componets/loading";
 
 function News() {
-  return (
-    <div className=" mt-[55px] w-full ">
-      <div className="w-[90%] ml-[5%] md:w-[35%] md:ml-[30%] flex flex-col border-b-2">
-        <h2 className="text-lg my-5 font-bold">News</h2>
-        <div className="w-full relative ">
-          <div className="aspect-video ">
-            <img
-              src="/curfs6.jpg"
-              alt="img"
-              className=" object-cover w-full h-full rounded-md"
-            />
-          </div>
+  
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-          <div className="absolute w-full bottom-0 h-[50px] rounded-b-md bg-black opacity-60 flex items-center">
-            <h3 className="text-lg ml-6 font-semibold text-white">
-              title of news
-            </h3>
-          </div>
-        </div>
-        <div className="my-4">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente
-            magnam, et repellendus alias laborum eveniet.
-          </p>
-          <Link className="flex items-center gap-1 font-bold underline text-[#2B3087] leading-8">
-            Lees verder
-            <span className="font-bold text-2xl">
-              <HiChevronRight />
-            </span>
-          </Link>
-        </div>
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationType, setNotificationType] = useState(null);
+  const [notificationTitle, setNotificationTitle] = useState(null);
+  const [notificationBody, setNotificationBody] = useState(null);
+
+  const shownotiftion = () => {
+    setShowNotification(true);
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 5000);
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get(`https://testapi.nhustle.in/app/news/`)
+      .then((res) => {
+        setData(res.data.reverse());
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(true);
+        console.log(err);
+        setNotificationTitle("Error !!");
+        setNotificationBody("Something went wrong.");
+        setNotificationType("error");
+        shownotiftion();
+      });
+  }, []);
+
+  return (
+    <>
+      <div
+        className={`fixed top-6 right-0 shadow-lg z-50 w-80 rounded-2xl transition-transform duration-300 transform ${
+          showNotification ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <Notificationbox
+          title={notificationTitle}
+          body={notificationBody}
+          setShowNotification={setShowNotification}
+          type={notificationType}
+        />
       </div>
-      <div className=" w-[90%] ml-[5%] md:max-w-[35%] md:ml-[30%] mt-4 flex flex-col">
-        <h3 className="text-lg font-semibold">Title newsletter</h3>
-        <div className="my-2">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente
-            magnam, et repellendus alias laborum eveniet.
-          </p>
-          <Link className="flex items-center gap-1 font-bold underline text-[#2B3087] leading-8">
-            Lees verder
-            <span className="font-bold text-2xl">
-              <HiChevronRight />
-            </span>
-          </Link>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="mt-[55px] w-full">
+          <h2 className="text-lg my-5 md:w-[35%] md:ml-[30%]  w-[90%] ml-[5%]  font-bold">
+            News
+          </h2>
+          {data?.map((item) => (
+            <div
+              key={item.id}
+              className="w-[90%] ml-[5%] md:w-[35%] md:ml-[30%] flex my-4 flex-col "
+            >
+              <div className="w-full relative">
+                <div className="aspect-video">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="object-cover w-full h-full rounded-md"
+                  />
+                </div>
+                <div className="absolute w-full bottom-0 h-[50px] rounded-b-md bg-black opacity-60 flex items-center">
+                  <h3 className="text-lg ml-6 font-semibold text-white">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+              <div className="my-4">
+                <p>{item.message.slice(0,40)} ...</p>
+                <Link
+                  to={`/news/${item.id}`}
+                  className="flex items-center gap-1 font-bold underline text-[#2B3087] leading-8"
+                >
+                  see more
+                  <span className="font-bold text-2xl">
+                    <HiChevronRight />
+                  </span>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 

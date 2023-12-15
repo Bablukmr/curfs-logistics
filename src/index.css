@@ -4,11 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
+@layer base {
   ul, ol {
     list-style: revert;
+    margin:16px 0px;
+    padding-left: 40px;
+    /* padding: 20px; */
   }
-} */
+}
 
 p,
 h1,
