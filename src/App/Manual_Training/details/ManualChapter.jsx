@@ -72,17 +72,19 @@ function ExamplChapter() {
           <Loading />
         ) : (
           <div className=" w-full mt-[55px] mb-8">
+            <p className="border-solid border fixed bottom-[80px] w-full "></p>
             <div className="w-[90%] ml-[5%] md:ml-[35%] md:w-[30%]">
               <h2 className="font-semibold text-lg my-4">{apiData?.title}</h2>
-              <div dangerouslySetInnerHTML={{ __html: apiData?.desc }} />
-              <div className="fixed bottom-0 w-[90%] md:w-[35%] flex items-center justify-between h-[70px] border-t-2">
+              <div className="text-[15px]" dangerouslySetInnerHTML={{ __html: apiData?.desc }} />
+
+              <div className="fixed bottom-0 w-[90%] md:w-[35%] flex items-center justify-between h-[80px]">
                 <Link
                   onClick={() => window.history.back()}
-                  className="w-[120px] h-[45px] flex items-center justify-center rounded-md bg-[#2B3087] text-white"
+                  className="w-[120px] h-[45px] font-semibold text-[16px] flex items-center justify-center rounded-md bg-[#2B3087] text-white"
                 >
-                  overview
+                  Overview
                 </Link>
-                <div className="flex gap-6 ">
+                <div className="flex gap-4 ">
                   <div className="p-1 bg-blue-200 rounded-md text-white text-2xl font-bold">
                     <HiChevronLeft />
                   </div>

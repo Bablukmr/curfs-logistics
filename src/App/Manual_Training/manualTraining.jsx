@@ -75,7 +75,7 @@ function ManualTraining() {
             className="rounded-md object-cover w-full h-full"
           />
         </div>
-        <div className="bg-[#2B3087] absolute bottom-0 rounded-b-md w-full h-[50px] flex justify-around items-center text-white">
+        <div className="bg-[#2B3087] absolute bottom-0 rounded-b-md w-full h-[50px] flex justify-between px-[20px] items-center text-white">
           <p className="text-lg font-medium">{item.title}</p>
           <div className="text-2xl font-bold">
             <HiChevronRight />
@@ -104,7 +104,7 @@ function ManualTraining() {
           <Loading />
         ) : (
           <div className="mt-[55px] mb-8 flex flex-col items-center justify-center">
-            <div className="mt-5 w-[90%] md:w-[35%] flex gap-y-[20px] md:gap-y-[24px]   flex-col items-center justify-center">
+            <div className="mt-5 w-[90%] md:w-[35%] flex gap-y-[10px] flex-col items-center justify-center">
               {mapData(manualApiData, "manuallist")}
               {mapData(trainingApiData, "traininglist")}
             </div>

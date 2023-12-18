@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Notificationbox from "../Componets/notificationbox";
+import { Link } from "react-router-dom";
 
 function Carousel({
   data,
@@ -13,16 +14,15 @@ function Carousel({
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    if (!data) return;
-    const timer = setInterval(() => {
-      setCurrentIndex((currentIndex + 1) % data?.length);
-    }, 6000);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, [currentIndex, data]);
+  // useEffect(() => {
+  //   if (!data) return;
+  //   const timer = setInterval(() => {
+  //     setCurrentIndex((currentIndex + 1) % data?.length);
+  //   }, 6000);
+//   return () => {
+  //     clearInterval(timer);
+  //   };
+  // }, [currentIndex, data]);
 
   const handleClick = (index) => {
     setCurrentIndex(index);
@@ -48,22 +48,22 @@ function Carousel({
       </div>
       <div className="w-full my-6 flex items-center justify-center">
         <div className="w-[90%] md:w-[35%] flex flex-col">
-          <h2 className="text-xl text-start font-semibold">Latest news</h2>
+          <h2 className="text-xl mb-[14px] text-start font-semibold">Latest news</h2>
           <div>
-            <div className="w-full my-4 relative rounded-md ">
-              <div className="aspect-[11/5]">
+            <Link to={`/news/${data[currentIndex]?.id}`} className="w-full relative rounded-md ">
+              <div className="aspect-[10/4]">
                 <img
                   src={data[currentIndex].img}
                   alt="img"
                   className="rounded-md object-cover w-full h-full"
                 />
               </div>
-              <div className="w-full bg-black opacity-50 h-[61px] rounded-b-md absolute bottom-0"></div>
-              <h3 className="text-[16px] font-semibold text-white absolute bottom-4 left-4">
+              <div className="w-full bg-black opacity-50 h-[40px] rounded-b-md absolute bottom-0"></div>
+              <h3 className="text-[16px] font-semibold text-white absolute bottom-[9px] left-4">
                 {data[currentIndex].title}
               </h3>
-            </div>
-            <div className="w-full">
+            </Link>
+            <div className="w-full mt-[14px]">
               <p className="font-normal text-[13px]">
                 {data[currentIndex].message.slice(0, 90)} ...
               </p>
