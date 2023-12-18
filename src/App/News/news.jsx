@@ -6,7 +6,6 @@ import Notificationbox from "../../Componets/notificationbox";
 import Loading from "../../Componets/loading";
 
 function News() {
-  
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -66,7 +65,7 @@ function News() {
               key={item.id}
               className="w-[90%] ml-[5%] md:w-[35%] md:ml-[30%] flex my-4 flex-col "
             >
-              <div className="w-full relative">
+              {/* <div className="w-full relative">
                 <div className="aspect-video">
                   <img
                     src={item.img}
@@ -79,9 +78,25 @@ function News() {
                     {item.title}
                   </h3>
                 </div>
+              </div> */}
+              <div className="w-full  relative rounded-md ">
+                <div className="aspect-[10/4]">
+                  <img
+                    src={item.img}
+                    alt="img"
+                    className="rounded-md object-cover w-full h-full"
+                  />
+                </div>
+                <div className="w-full bg-black opacity-50 h-[40px] rounded-b-md absolute bottom-0"></div>
+                <h3 className="text-[16px] font-semibold text-white absolute bottom-2 left-4">
+                  {item.title}
+                </h3>
               </div>
+
               <div className="my-4">
-                <p>{item.message.slice(0,40)} ...</p>
+                <p className=" font-normal text-[13px]">
+                  {item.message.slice(0, 40)} ...
+                </p>
                 <Link
                   to={`/news/${item.id}`}
                   className="flex items-center gap-1 font-bold underline text-[#2B3087] leading-8"

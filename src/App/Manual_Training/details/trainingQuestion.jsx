@@ -73,9 +73,10 @@ function TrainingQuestion() {
           <Loading />
         ) : (
           <div className=" w-full mt-[55px] mb-8">
+             <p className="border-solid border fixed bottom-[80px] w-full "></p>
             <div className="w-[90%] ml-[5%] md:ml-[35%] md:w-[30%]">
               <h2 className="font-semibold text-lg my-4">Food defence</h2>
-              <p className="mt-3 mb-5">
+              <p className="mt-3 mb-5  font-normal text-[13px]">
                 Food defense is het beveiligen van de productiefaciliteit tegen
                 kwaadwillige acties die de veiligheid van een product bedreigen.
               </p>
@@ -87,21 +88,21 @@ function TrainingQuestion() {
                     <h1 className="font-semibold text-base my-3">
                       Question {b + 1}
                     </h1>
-                    <p className="m-0 p-0 my-2"> {a.title}</p>
+                    <p className="m-0 p-0 my-2  font-normal text-[13px]"> {a.title}</p>
                     <div className="flex flex-col gap-y-4 mb-5 ">
                       <div className="flex gap-x-4 items-center ">
-                        <p className="w-[100px] text-center rounded-md p-[1px] border border-[#2B3087]">
+                        <p className="w-[100px]  font-normal text-[13px] text-center rounded-md p-[1px] border border-[#2B3087]">
                           {a.op1}
                         </p>
-                        <p className="w-[100px] text-center rounded-md p-[1px] border border-[#2B3087]">
+                        <p className="w-[100px]  font-normal text-[13px] text-center rounded-md p-[1px] border border-[#2B3087]">
                           {a.op2}
                         </p>
                       </div>
                       <div className="flex gap-x-4 items-center ">
-                        <p className="w-[100px] text-center rounded-md p-[1px] border border-[#2B3087]">
+                        <p className="w-[100px]  font-normal text-[13px] text-center rounded-md p-[1px] border border-[#2B3087]">
                           {a.op3}
                         </p>
-                        <p className="w-[100px] text-center rounded-md p-[1px] border border-[#2B3087]">
+                        <p className="w-[100px]  font-normal text-[13px] text-center rounded-md p-[1px] border border-[#2B3087]">
                           {a.op4}
                         </p>
                       </div>
@@ -109,24 +110,24 @@ function TrainingQuestion() {
                   </div>
                 ))}
               </div>
-              <div className="fixed bottom-0 bg-white w-[90%] md:w-[35%] flex items-center justify-between h-[70px] border-t-2">
+
+              <div  className="fixed bg-white bottom-0 w-[90%] md:w-[35%] flex items-center justify-between h-[80px]">
                 <Link
                   onClick={() => window.history.back()}
-                  className="w-[120px] h-[45px] flex items-center justify-center rounded-md bg-[#2B3087] text-white"
+                  className="w-[120px] h-[45px] font-semibold text-[16px] flex items-center justify-center rounded-md bg-[#2B3087] text-white"
                 >
-                  overview
+                  Overview
                 </Link>
-                <div className="flex gap-6 ">
+                <div className="flex gap-4 ">
                   <div className="p-1 bg-blue-200 rounded-md text-white text-2xl font-bold">
                     <HiChevronLeft />
                   </div>
-                  <div
-                  // onClick={()=>}
-                  className="p-1 bg-[#2B3087] cursor-pointer rounded-md text-white text-2xl font-bold">
+                  <div className="p-1 bg-[#2B3087] cursor-pointer rounded-md text-white text-2xl font-bold">
                     <HiChevronRight />
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         )}

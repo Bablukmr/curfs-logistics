@@ -3,25 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../../../Componets/loading";
 import Notificationbox from "../../../Componets/notificationbox";
+import ButtonComponets from "../../../Componets/buttonComponets";
+import LinkComponents from "../../../Componets/linkComponents";
 
 function Manualoffice() {
   const param = useParams();
   const { id } = useParams();
   console.log(id);
-  // const { name, id } = useParams();
-  // const newparm = name.split("list")[0];
-  // console.log(newparm);
-  // console.log(name);
-  // console.log(id);
-  //https://localhost${name==="manuallist" ? "namual :"training"}/${id}
-  //  console.log(param);
-  // const param1 = param.name.split("-")[0];
-  //  console.log(param1);
-  // const param2 = param1.split("list")[0];
-  // console.log(param2);
-
-  // const id = param.name.split("-")[1];
-  //  console.log(id);
 
   const [listData, setListData] = useState(null);
   const [titleDes, setTitleDes] = useState([]);
@@ -100,60 +88,30 @@ function Manualoffice() {
         ) : (
           <div className="mt-[55px]  mb-8 w-full flex items-center justify-center">
             <div className="w-[90%] mt-5 md:w-[35%]">
-              <div className="aspect-video">
+              <div className="aspect-[10/4]">
                 <img
-                  src= {titleDes?.img}
+                  src={titleDes?.img}
                   // src="/curfs7.jpg"
-                  alt= {titleDes?.title}
+                  alt={titleDes?.title}
                   className="rounded-md object-cover w-full h-full"
                 />
               </div>
 
               <div className="mt-2">
-                <h2 className="font-semibold text-lg mb-2 md:mt-[10px]">
+                <h2 className="font-semibold text-lg mb-2 mt-5 md:mt-[10px]">
                   {titleDes?.title}
                 </h2>
-                {/* <div className="bg-blue-600 w-[20%]"> */}
 
-                <div dangerouslySetInnerHTML={{ __html: titleDes?.desc }} />
-                {/* </div> */}
-
-                {/* <p className="my-2 font-normal text-[12px]">
-            Curfs Logistics B.V. en Curfs Warehouse B.V. hecht belang aan veilig
-            en gezond werken; dat komt immers de dienstverlening ten goede. Jouw
-            ervaring en vakbekwaamheid spelen daarbij een belangrijke rol
-          </p> */}
+                <div
+                  className="text-[15px]"
+                  dangerouslySetInnerHTML={{ __html: titleDes?.desc }}
+                />
               </div>
 
               <div className="flex flex-col gap-y-[10px] my-6">
                 {listData?.map((a) => (
-                  <Link
-                    to={`${a.id}`}
-                    key={a.id}
-                    className="flex items-center justify-center bg-[#2B3087] h-[50px] w-full text-white font-semibold text-base rounded-md"
-                  >
-                    {a.title}
-                  </Link>
+                  <LinkComponents key={a.id} name={a.title} to={`${a.id}`} />
                 ))}
-
-                {/* <Link className="flex items-center justify-center bg-[#2B3087] h-[50px] w-full text-white font-semibold text-base rounded-md">
-            Maatregelen COVID-19
-          </Link>
-          <Link
-            to="example-chapter"
-            className="flex items-center justify-center bg-[#2B3087] h-[50px] w-full text-white font-semibold text-base rounded-md"
-          >
-            Example chapter
-          </Link>
-          <Link className="flex items-center justify-center bg-[#2B3087] h-[50px] w-full text-white font-semibold text-base rounded-md">
-            Personeelszaken
-          </Link>
-          <Link className="flex items-center justify-center bg-[#2B3087] h-[50px] w-full text-white font-semibold text-base rounded-md">
-            Veiligheid
-          </Link>
-          <Link className="flex items-center justify-center bg-[#2B3087] h-[50px] w-full text-white font-semibold text-base rounded-md">
-            Veiligheid
-          </Link> */}
               </div>
             </div>
           </div>
