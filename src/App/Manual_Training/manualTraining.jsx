@@ -59,27 +59,6 @@ function ManualTraining() {
       });
   }, []);
 
-  // const data = [
-  //   { img: "/curfs7.jpg", title: "Manual office", param: "manual-office" },
-  //   {
-  //     img: "/curfs2.jpg",
-  //     title: "Manual logistics",
-  //     param: "manual-logistics",
-  //   },
-  //   {
-  //     img: "/curfs3.jpg",
-  //     title: "Training IFS 2023",
-  //     param: "manual-logistics",
-  //   },
-  //   { img: "/curfs7.jpg", title: "Manual office", param: "manual-office" },
-  //   { img: "/curfs2.jpg", title: "Manual logistics", param: "manual-office" },
-  //   {
-  //     img: "/curfs3.jpg",
-  //     title: "Training IFS 2023",
-  //     param: "manual-logistics",
-  //   },
-  // ];
-
   const mapData = (data, type) => {
     return data?.map((item, index) => (
       <Link
@@ -125,7 +104,7 @@ function ManualTraining() {
           <Loading />
         ) : (
           <div className="mt-[55px] mb-8 flex flex-col items-center justify-center">
-            <div className="mt-5 w-[90%] md:w-[35%] flex gap-y-[10px] flex-col items-center justify-center">
+            <div className="mt-5 w-[90%] md:w-[35%] flex gap-y-[20px] md:gap-y-[24px]   flex-col items-center justify-center">
               {mapData(manualApiData, "manuallist")}
               {mapData(trainingApiData, "traininglist")}
             </div>

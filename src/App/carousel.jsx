@@ -32,57 +32,6 @@ function Carousel({
     return null;
   }
 
-  // const data = [
-  //   {
-  //     title: "Title 1",
-  //     image: "/curfs1.jpg",
-  //     paragraph:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptates facilis quam inventore corporis, explicabo vel consectetur",
-  //   },
-  //   {
-  //     title: "Title 2",
-  //     image: "/curfs2.jpg",
-  //     paragraph:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptates facilis quam inventore corporis, explicabo vel consectetur",
-  //   },
-  //   {
-  //     title: "Title 3",
-  //     image: "/curfs3.jpg",
-  //     paragraph:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptates facilis quam inventore corporis, explicabo vel consectetur",
-  //   },
-  //   {
-  //     title: "Title 4",
-  //     image: "/curfs4.jpg",
-  //     paragraph:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptates facilis quam inventore corporis, explicabo vel consectetur",
-  //   },
-  //   {
-  //     title: "Title 5",
-  //     image: "/curfs5.jpg",
-  //     paragraph:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptates facilis quam inventore corporis, explicabo vel consectetur",
-  //   },
-  //   {
-  //     title: "Title 6",
-  //     image: "/curfs6.jpg",
-  //     paragraph:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptates facilis quam inventore corporis, explicabo vel consectetur",
-  //   },
-  //   {
-  //     title: "Title 7",
-  //     image: "/curfs7.jpg",
-  //     paragraph:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptates facilis quam inventore corporis, explicabo vel consectetur",
-  //   },
-  //   {
-  //     title: "Title 8",
-  //     image: "/curfs8.jpg",
-  //     paragraph:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptates facilis quam inventore corporis, explicabo vel consectetur",
-  //   },
-  // ];
-
   return (
     <>
       <div
