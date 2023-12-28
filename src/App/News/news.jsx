@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiChevronRight } from "react-icons/hi";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -8,7 +8,7 @@ import Loading from "../../Componets/loading";
 function News() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const Navigate = useNavigate();
   const [showNotification, setShowNotification] = useState(false);
   const [notificationType, setNotificationType] = useState(null);
   const [notificationTitle, setNotificationTitle] = useState(null);
@@ -63,7 +63,7 @@ function News() {
           {data?.map((item) => (
             <div
               key={item.id}
-              className="w-[90%] ml-[5%] md:w-[35%] md:ml-[30%] flex my-4 flex-col "
+              className="w-[90%] ml-[5%] md:w-[35%] md:ml-[30%] flex my-1 flex-col "
             >
               {/* <div className="w-full relative">
                 <div className="aspect-video">
@@ -80,7 +80,10 @@ function News() {
                 </div>
               </div> */}
               <div className="w-full  relative rounded-md ">
-                <div className="aspect-[10/4]">
+                <div
+                  onClick={() => Navigate(`/news/${item.id}`)}
+                  className="aspect-[10/4] cursor-pointer"
+                >
                   <img
                     src={item.img}
                     alt="img"

@@ -115,9 +115,15 @@ function AppLayout() {
                   item.id == idValue ? "bg-[#2B3087] text-white" : " "
                 } `}
               >
-                <p 
-                // ${ item.id == idValue ?"":"border-b-2" }
-                className={`w-full pl-2 py-2  border-b-2`}> {item.value}</p>
+                <p
+                  // ${ item.id == idValue ?"":"border-b-2" }
+                  className={`w-full pl-2 py-2  border-b-2 ${
+                    item.id == idValue ? "border-none" : ""
+                  }`}
+                >
+                  {" "}
+                  {item.value}
+                </p>
               </li>
             ))}
           </ul>

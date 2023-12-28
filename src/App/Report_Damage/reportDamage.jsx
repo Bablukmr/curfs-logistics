@@ -12,13 +12,9 @@ function ReportDamage() {
           similique. Incidunt commodi, provident nam.
         </p>
         <div className="flex flex-col gap-3 mt-6">
-          <LinkComponents to="logistics" name={"Logistics"} />
-          <LinkComponents name={"Warehouse"} />
+          <LinkComponents to="/report-damage/logistics" name={"Logistics"} />
+          <LinkComponents to="/report-damage/warehouse" name={"Warehouse"} />
           <LinkComponents name={"Outside Area"} />
-
-          {/* <Link to='logistics' className='flex items-center justify-center bg-[#2B3087] h-[50px] w-full text-white font-semibold text-sm rounded-md'>Logistics</Link>
-        <Link className='flex items-center justify-center bg-[#2B3087] h-[50px] w-full text-white font-semibold text-sm rounded-md'>Warehouse</Link>
-        <Link className='flex items-center justify-center bg-[#2B3087] h-[50px] w-full text-white font-semibold text-sm rounded-md'>Outside area</Link> */}
         </div>
       </div>
     </div>

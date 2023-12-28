@@ -15,6 +15,8 @@ import Logistics from "./Report_Damage/Logistics/logistics";
 import TrainigList from "./Manual_Training/details/trainigList";
 import TrainingQuestion from "./Manual_Training/details/trainingQuestion";
 import DetailedNews from "./News/detailedNews";
+import ReportNewDamage from "./Report_Damage/Logistics/ReportNewDamage";
+import Warehouse from "./Report_Damage/warehouse/warehouse";
 
 function AppRoutes() {
   return (
@@ -32,6 +34,8 @@ function AppRoutes() {
       <Route path="/news/:id" element={<DetailedNews/>}/>
       <Route path="/report-damage" element={<ReportDamage/>}/>
       <Route path="/report-damage/logistics" element={<Logistics/>}/>
+      <Route path="/report-damage/warehouse" element={<Warehouse/>}/>
+      <Route path="/report-damage/logistics/:name" element={<ReportNewDamage/>}/>
       <Route path="/documents" element={<Documents/>}/>
       <Route path="/documents/proof-license" element={<ProofLicense/>}/>
       <Route path="/documents/general-documents" element={<GeneralDocuments/>}/>

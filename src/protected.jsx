@@ -13,7 +13,7 @@ const location=useLocation()
         localStorage.setItem("path",pathurl)
         // console.log({path,search})
         let token=localStorage.getItem("token")
-        console.log(token)
+        // console.log(token)
         if(!token){
             navigate("/auth")
         }
