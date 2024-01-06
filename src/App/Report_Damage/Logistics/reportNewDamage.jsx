@@ -78,6 +78,7 @@ function ReportNewDamage() {
                   <img
                     src={URL.createObjectURL(file)}
                     alt={`Image ${index + 1}`}
+                    className="h-full w-full"
                   />
                   <div
                     className="absolute bottom-1 right-1 font-bold text-xl text-red-700 cursor-pointer"

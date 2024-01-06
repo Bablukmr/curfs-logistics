@@ -1,12 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ButtonComponets from "../../../Componets/buttonComponets";
 import InputComponets from "../../../Componets/inputComponets";
+import CustomDropdown from "../../../Componets/dropdown";
+import axios from "axios";
 
 function Logistics() {
   const Navigate = useNavigate();
 
   const [vehical, setVehical] = useState("");
+
+  const [selectedVehicle, setSelectedVehicle] = useState("");
+  const [vehicleData, setVehicleData] = useState([]);
+  const [loadingVehicle, setLoadingVehicle] = useState(false);
+  const handleChangeVehicle = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setSelectedVehicle(value);
+    setVehical(value)
+    // console.log(value, "ssss");
+  };
+  useEffect(() => {
+    setLoadingVehicle(true)
+    axios
+      .get("https://testapi.nhustle.in/app/vehicle/")
+      .then((res) => {
+        // console.log(res.data);
+        setVehicleData(res.data);
+        setLoadingVehicle(false)
+      })
+      .catch(() => {
+        console.log("err");
+        setLoadingVehicle(false)
+      });
+  }, []);
 
   return (
     <div className="mt-[55px] mb-4 w-full">
@@ -34,20 +62,14 @@ function Logistics() {
         />
         <div className="w-full mt-2">
           <label className="font-medium text-base">Select Vehicle</label>
-          <div className="border-[#595959] mt-2 rounded-md border border-solid flex items-center px-2">
-            <select
-              onChange={(e) => setVehical(e.target.value)}
-              value={vehical}
-              placeholder="10-3-23"
-              className="border-none h-[50px] w-full bg-white  outline-none px-2 font-medium text-base"
-            >
-              <option>select</option>
-              <option value="22-JBN-8">22-JBN-8</option>
-              <option value="abc">abc</option>
-              <option value="aaaaaa">aaaaaa</option>
-              <option value="bbbbb">bbbbb</option>
-            </select>
-          </div>
+          <CustomDropdown
+            data={vehicleData}
+            loading={loadingVehicle}
+            handleChange={handleChangeVehicle}
+            selected={selectedVehicle}
+            placeholder="Select Vehicles"
+            toShow="license_plate"
+          />
         </div>
         <div className=" bg-[#F5F5F5] mt-3 rounded-md flex gap-x-3 items-center justify-center">
           <div className="w-[50%] p-2">

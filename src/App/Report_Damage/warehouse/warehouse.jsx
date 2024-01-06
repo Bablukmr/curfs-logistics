@@ -1,12 +1,64 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ButtonComponets from "../../../Componets/buttonComponets";
 import InputComponets from "../../../Componets/inputComponets";
+import axios from "axios";
+import CustomDropdown from "../../../Componets/dropdown";
+import MuiSearch from "../../../Componets/muiSearch";
 
 function Warehouse() {
   const Navigate = useNavigate();
   const [page, setPage] = useState(true);
-  const [vehical, setVehical] = useState("");
+  const [vehicals, setVehicals] = useState([]);
+  const [selectedWarehouse, setSelectedWarehouse] = useState("");
+  const [WarehouseData, setWarehouseData] = useState([]);
+  const [loadingWarehouse, setLoadingWarehouse] = useState(false);
+
+  const [selectedVehicle, setSelectedVehicle] = useState("");
+  const [vehicleData, setVehicleData] = useState([]);
+  const [loadingVehicle, setLoadingVehicle] = useState(false);
+
+  console.log(selectedWarehouse, "aa");
+
+  useEffect(() => {
+    setLoadingWarehouse(true);
+    axios
+      .get("https://testapi.nhustle.in/app/warehouse")
+      .then((res) => {
+        console.log(res.data);
+        setWarehouseData(res.data);
+        setLoadingWarehouse(false);
+      })
+      .catch(() => {
+        console.log("err");
+        setLoadingWarehouse(false);
+      });
+  }, []);
+
+  const handleChangeWarehouse = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setSelectedWarehouse(value);
+
+    axios
+      .get("https://testapi.nhustle.in/app/vehicle/")
+      .then((res) => {
+        console.log(res.data);
+        setVehicleData(res.data);
+      })
+      .catch(() => console.log("err"));
+    // console.log(value, "ssss");
+  };
+
+  const handleChangeVehicle = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setSelectedVehicle(value);
+
+    console.log(value, "ssss");
+  };
 
   return (
     <>
@@ -24,52 +76,35 @@ function Warehouse() {
           <form className="overflow-y-auto mb-[10px] flex flex-col gap-3 mt-6 w-[90%] ml-[5%] md:ml-[35%] md:w-[30%]">
             <div className="w-full mt-2">
               <label className="font-medium text-base">Select warehouse</label>
-              <div className="border-[#595959] mt-2 rounded-md border border-solid flex items-center px-2">
-                <select
-                  onChange={(e) => setVehical(e.target.value)}
-                  //   value={vehical}
-                  placeholder="10-3-23"
-                  className="border-none h-[50px] w-full bg-white  outline-none px-2 font-medium text-base"
-                >
-                  <option>Select warehouse</option>
-                  <option value="abc">abc</option>
-                  <option value="aaaaaa">aaaaaa</option>
-                  <option value="bbbbb">bbbbb</option>
-                </select>
-              </div>
+              <CustomDropdown
+                data={WarehouseData}
+                loading={loadingWarehouse}
+                placeholder="Select Warehouse"
+                handleChange={handleChangeWarehouse}
+                selected={selectedWarehouse}
+                toShow="name"
+              />
             </div>
 
-            <div className="w-full mt-2">
-              <label className="font-medium text-base">Select Vehicles </label>
-              <div className="border-[#595959] mt-2 rounded-md border border-solid flex items-center px-2">
-                <select
-                  onChange={(e) => setVehical(e.target.value)}
-                  //   value={vehical}
-                  placeholder="10-3-23"
-                  className="border-none h-[50px] w-full bg-white  outline-none px-2 font-medium text-base"
-                >
-                  <option>Select Vehicles</option>
-                  <option value="abc">abc</option>
-                  <option value="aaaaaa">aaaaaa</option>
-                  <option value="bbbbb">bbbbb</option>
-                </select>
-              </div>
+            <div className="w-full mt-2 ">
+            <label className="font-medium text-base">Select Vehicles </label>
+              {/* <InputComponets
+                lavelName="Search vehicle"
+                placeholder="Search vehicle"
+                type="search"
+              /> */}
+              <MuiSearch/>
             </div>
-            <div className="w-full mt-2">
-              <label className="font-medium text-base">Forklift 22 </label>
-              <div className="border-[#595959] mt-2 rounded-md border border-solid flex items-center px-2">
-                <select
-                  onChange={(e) => setVehical(e.target.value)}
-                  //   value={vehical}
-                  placeholder="10-3-23"
-                  className="border-none h-[50px] w-full bg-white  outline-none px-2 font-medium text-base"
-                >
-                  <option>Forklift 22</option>
-                  <option value="abc">abc</option>
-                  <option value="aaaaaa">aaaaaa</option>
-                  <option value="bbbbb">bbbbb</option>
-                </select>
-              </div>
+            <div className="w-full mt-2 ">
+              <label className="font-medium text-base">Select Vehicles </label>
+              <CustomDropdown
+                data={vehicleData}
+                loading={loadingVehicle}
+                handleChange={handleChangeVehicle}
+                selected={selectedVehicle}
+                placeholder="Select Vehicles"
+                toShow="license_plate"
+              />
             </div>
 
             <div className=" bg-[#F5F5F5] mt-3 rounded-md flex gap-x-3 items-center justify-center">
