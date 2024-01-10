@@ -32,6 +32,7 @@ export default function CustomDropdown({
   handleChange,
   selected,
   toShow,
+  disabled,
 }) {
   const theme = useTheme();
 
@@ -39,6 +40,7 @@ export default function CustomDropdown({
     <div>
       <FormControl sx={{ width: "100%", mt: 2 }}>
         <Select
+          disabled={disabled}
           sx={{
             // height: '2.5rem',
             color: "#262626",
@@ -52,7 +54,7 @@ export default function CustomDropdown({
               borderColor: "#262626",
             },
             "&:hover .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#262626",
+              borderColor: disabled ? "" : "#262626",
               borderWidth: "thin",
             },
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {

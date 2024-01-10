@@ -41,6 +41,7 @@ function ProofLicense() {
         <div className="w-full">
             <label className="font-semibold text-base">Select Vehicle</label>
             <CustomDropdown
+            // disabled={true}
             data={vehicleData}
             loading={loadingVehicle}
             handleChange={handleChangeVehicle}

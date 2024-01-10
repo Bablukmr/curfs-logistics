@@ -4,6 +4,7 @@ import ButtonComponets from "../../../Componets/buttonComponets";
 import InputComponets from "../../../Componets/inputComponets";
 import CustomDropdown from "../../../Componets/dropdown";
 import axios from "axios";
+import MuiSearch from "../../../Componets/muiSearch";
 
 function Logistics() {
   const Navigate = useNavigate();
@@ -18,21 +19,21 @@ function Logistics() {
       target: { value },
     } = event;
     setSelectedVehicle(value);
-    setVehical(value)
+    setVehical(value);
     // console.log(value, "ssss");
   };
   useEffect(() => {
-    setLoadingVehicle(true)
+    setLoadingVehicle(true);
     axios
       .get("https://testapi.nhustle.in/app/vehicle/")
       .then((res) => {
         // console.log(res.data);
         setVehicleData(res.data);
-        setLoadingVehicle(false)
+        setLoadingVehicle(false);
       })
       .catch(() => {
         console.log("err");
-        setLoadingVehicle(false)
+        setLoadingVehicle(false);
       });
   }, []);
 
@@ -55,14 +56,14 @@ function Logistics() {
         </p>
       </div>
       <form className="overflow-y-auto mb-[10px] flex flex-col gap-3 mt-6 w-[90%] ml-[5%] md:ml-[35%] md:w-[30%]">
-        <InputComponets
-          lavelName="Search vehicle"
-          placeholder="Search vehicle"
-          type="search"
-        />
+        <div className="w-full mt-2 ">
+          <label className="font-medium text-base">Select Vehicles </label>
+          <MuiSearch />
+        </div>
         <div className="w-full mt-2">
           <label className="font-medium text-base">Select Vehicle</label>
           <CustomDropdown
+            // disabled={true}
             data={vehicleData}
             loading={loadingVehicle}
             handleChange={handleChangeVehicle}

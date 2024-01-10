@@ -87,17 +87,15 @@ function Warehouse() {
             </div>
 
             <div className="w-full mt-2 ">
-            <label className="font-medium text-base">Select Vehicles </label>
-              {/* <InputComponets
-                lavelName="Search vehicle"
-                placeholder="Search vehicle"
-                type="search"
-              /> */}
-              <MuiSearch/>
+              <label className="font-medium text-base">Select Vehicles </label>
+              <MuiSearch
+              //  disabled={true}
+                />
             </div>
             <div className="w-full mt-2 ">
               <label className="font-medium text-base">Select Vehicles </label>
               <CustomDropdown
+                // disabled={true}
                 data={vehicleData}
                 loading={loadingVehicle}
                 handleChange={handleChangeVehicle}

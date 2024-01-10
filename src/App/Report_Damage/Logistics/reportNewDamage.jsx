@@ -14,19 +14,18 @@ function ReportNewDamage() {
 
   const handleFile = (e) => {
     const selectedFile = e.target.files[0];
-    if (files.length < 3) {
+    if (files.length < 10) {
       setFiles([...files, selectedFile]);
-    }
-     else {
-      alert("Maximum of three images allowed.");
+    } else {
+      alert("Maximum of ten images allowed.");
     }
   };
 
   const handleAddPictureClick = () => {
-    if (files.length < 3) {
+    if (files.length < 10) {
       fileInputRef.current.click();
     } else {
-      alert("Maximum of three images allowed.");
+      alert("Maximum of ten images allowed.");
     }
   };
 
@@ -69,7 +68,7 @@ function ReportNewDamage() {
               </div>
             </div>
 
-            <div className="mt-2 mb-1 flex gap-3 w-full items-center justify-between">
+            <div className="mt-2 mb-1 grid grid-cols-3 gap-3 w-full items-center justify-between">
               {files.map((file, index) => (
                 <div
                   key={index}
@@ -89,12 +88,13 @@ function ReportNewDamage() {
                 </div>
               ))}
 
-              {[...Array(3 - files.length)].map((_, index) => (
-                <div
-                  key={index}
-                  className="w-[110px] h-[110px] border border-[#A2A2A7] rounded-md"
-                ></div>
-              ))}
+              {files.length < 3 &&
+                [...Array(3 - files.length)].map((_, index) => (
+                  <div
+                    key={index}
+                    className="w-[110px] h-[110px] border border-[#A2A2A7] rounded-md"
+                  ></div>
+                ))}
             </div>
 
             <div className="w-full">
